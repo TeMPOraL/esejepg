@@ -1,0 +1,73 @@
+#+title: Eseje PG functional spec
+#+startup: hidestars
+
+Wstępny spec funkcjonalny.
+Ostatnia poważniejsza modyfikacja: <2012-11-24 So>.
+
+* Strona główna
+
+  Strona główna powinna zawierać listę dostępnych esejów z linkami,
+  linki do działów FAQ, About, Jak Pomóc w Tłumaczeniu, oraz
+  zaembedowane widgety socialne (share on everything you can think of).
+
+** Lista esejów
+   Sortowana chronologicznie, najnowsze u góry. Zawiera polski tytuł z
+   linkiem kierującym do tłumaczenia, oraz (pod spodem) link do
+   angielskiej wersji i ew. alternatywnego tłumaczenia.
+
+   Przykłady:
+   #+begin_src html
+        <strong><a href="startupideas.html">Jak znajdywać pomysły na startupy?</a></strong><br />
+        Oryginał: <a href="http://paulgraham.com/startupideas.html">How to Get Startup Ideas</a><br />
+   #+end_src
+
+   #+begin_src html
+     <strong>Rzeczy</strong><br />
+     Oryginał: <a href="http://www.paulgraham.com/stuff.html">Stuff</a><br />
+     Alternatywne tłumaczenie: <a href="http://nhw.pl/pl/2007/11/rzeczy">nhw.pl</a>
+   #+end_src
+
+   #+begin_src html
+     <strong><a href="road.html">Inna droga naprzód</a></strong><br />
+     Oryginał: <a href="http://paulgraham.com/road.html">The Other Road Ahead</a><br />
+     Ten esej jest częścią książki <a href="http://helion.pl/ksiazki/hakerzy-i-malarze-wielkie-idee-ery-komputerow-paul-graham,hakmal.htm">"Hakerzy i malarze"</a> (<a href="http://paulgraham.com/hackpaint.html">oryginał angielski</a>).
+   #+end_src
+
+
+* Strona eseju
+
+  Strona powinna maksymalnie sprzyjać wygodzie czytania i analizy.
+
+  Na początku artykułu mamy tytuł i dodatkowe linki (tak jak w [[Lista esejów][liście
+  esejów]]), dodatkowo mamy też listę tłumaczy / korektorów oraz datę
+  tłumaczenia.
+
+  Na samym końcu znajdują się widgety służące do like'owania i
+  share'owania tego konkretnego artykułu wszędzie, gdzie się da.
+
+  Sam esej składa się z treści i przypisów. Przypisy wyświetlane są
+  in-line (Tufte style), z linkami-kotwicami prowadzącymi do i z
+  nich. Ponadto, każdy akapit także zawiera dyskretny link, dostępny
+  po kliknięciu znaczku paragrafu, jaki pojawia się przy danym
+  akapicie kiedy najeżdżamy na niego myszką. Położenie i kolor tego
+  linku wzorowane są na [[http://worrydream.com/MagicInk/][Magic Ink]] Breta Victora.
+
+  Dodatkowo, pod linkiem do akapitu znajduje się też ikonka flagi
+  (albo dymka), oznaczona jako "komentuj tłumaczenie". Jej kliknięcie
+  otwiera popup pozwalający wpisać uwagę do tłumaczenia razem z
+  e-mailem kontaktowym. Dymek zawiera też link do strony "Jak pomóc z
+  tłumaczeniem" (otwierana w nowym oknie).
+
+* Dział FAQ
+  Po pierwsze, NIE NAZYWA SIĘ FAQ. To nie są frequently asked
+  questions ;).
+
+  Niektóre pytania:
+  - stosunek pg do tłumaczeń
+  - odpowiedź pg na maila (jeśli przyśle)
+  - jak pomóc? -> link do strony jak pomóc z tłumaczeniem
+  - prawa do tłumaczeń / linkowania
+
+* Dział About
+  - o stronie
+  - o tłumaczach
