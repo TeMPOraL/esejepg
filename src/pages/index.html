@@ -1,5 +1,14 @@
 <% (defparameter title "Eseje Paula Grahama w języku polskim") %>
 <%
+(defparameter essay-title nil)
+(defparameter essay-url nil)
+(defparameter creation-date nil)
+(defparameter essay-orig-title nil)
+(defparameter essay-orig-url nil)
+(defparameter orig-creation-date nil)
+(defparameter alternative-translations nil)
+(defparameter part-of-hnp nil)
+(defparameter additional-html nil)
 (defun essay (&key title url date orig-title orig-url orig-date alt-translations hnp additional-info)
 (setf essay-title title
       essay-url url
