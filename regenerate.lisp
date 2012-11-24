@@ -8,6 +8,14 @@
   "Returns t if given file should generate a corresponding HTML in source."
   (not (search "templates/" (namestring path))))
 
+(defun file-or-dir-to-delete-p (path)
+  "Returns t if given file or directory should be deleted when cleaning."
+  (let ((name (namestring path)))
+    (not (or (search "img/" name)
+             (search "js/" name)
+             (search "css/" name)
+             (ppcre:scan "site/$" name)))))
+
 (defun generate-file (pathname)
   (save-file (process-template pathname)
              (make-destination-path pathname))
@@ -31,8 +39,19 @@
 (defun make-destination-path (pathname)
   (pathname (cl-ppcre:regex-replace "src/" (namestring pathname) "site/")))
 
+(defun del-dir-or-file-noerror (pathname)
+  (format t "Deleting: ~A~%" pathname)
+  (ignore-errors (fad:delete-directory-and-files pathname)))
+
+
+(defun delete-old-files ()
+  (ignore-errors
+    (fad:walk-directory "site" 'del-dir-or-file-noerror :test 'file-or-dir-to-delete-p :if-does-not-exist :ignore :directories t)))
+
 (defun regenerate ()
   "Regenerate all static HTML from template files in src/ directory, and put them in site/ directory."
+  (format t "Deleting old files...~%")
+  (delete-old-files)
   (format t "Regenerating website...~%")
   (fad:walk-directory "src" 'generate-file :test 'template-to-generate-file-from-p)
   (format t "Done!~%"))
