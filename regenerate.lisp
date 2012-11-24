@@ -55,10 +55,10 @@
   (cl-ppcre:regex-replace "\.scss$" name ".css"))
 
 (defun generate-css (pathname)
-  (let ((name (namestring pathname)))
-    #+WINDOWS(format t "Running command: /home/temporal/lib/sass/bin/sass --style expanded ~A:~A~%" name (make-css-file-name name))
-    #+LINUX(format t "Converting ~A to ~A~%" name (make-css-file-name name))
-    #+LINUX(asdf:run-shell-command "/home/temporal/lib/sass/bin/sass --style expanded" name (make-css-file-name name))))
+  (let* ((name (namestring pathname))
+         (command (format nil "/home/temporal/lib/sass/bin/sass --style expanded ~A:~A" name (make-css-file-name name))))
+    (format t "Running command: ~A~%" command)
+    #+LINUX(asdf:run-shell-command command)))
 
 (defun regenerate ()
   "Regenerate all static HTML from template files in src/ directory, and put them in site/ directory."
