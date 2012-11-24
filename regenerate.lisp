@@ -8,6 +8,10 @@
   "Returns t if given file should generate a corresponding HTML in source."
   (not (search "templates/" (namestring path))))
 
+(defun sass-file-p (path)
+  "Returns t if file has .scss extension (SASS stylesheet)."
+  (ppcre:scan "\.scss$" (namestring path)))
+
 (defun file-or-dir-to-delete-p (path)
   "Returns t if given file or directory should be deleted when cleaning."
   (let ((name (namestring path)))
@@ -43,10 +47,17 @@
   (format t "Deleting: ~A~%" pathname)
   (ignore-errors (fad:delete-directory-and-files pathname)))
 
-
 (defun delete-old-files ()
   (ignore-errors
     (fad:walk-directory "site" 'del-dir-or-file-noerror :test 'file-or-dir-to-delete-p :if-does-not-exist :ignore :directories t)))
+
+(defun make-css-file-name (name)
+  (cl-ppcre:regex-replace "\.scss$" name ".css"))
+
+(defun generate-css (pathname)
+  (let ((name (namestring pathname)))
+    #+WINDOWS(format t "Running command: /home/temporal/lib/sass/bin/sass --style expanded ~A:~A~%" name (make-css-file-name name))
+    #+LINUX(asdf:run-shell-command "/home/temporal/lib/sass/bin/sass --style expanded" name (make-css-file-name name))))
 
 (defun regenerate ()
   "Regenerate all static HTML from template files in src/ directory, and put them in site/ directory."
@@ -54,6 +65,8 @@
   (delete-old-files)
   (format t "Regenerating website...~%")
   (fad:walk-directory "src" 'generate-file :test 'template-to-generate-file-from-p)
+  (format t "Regenerating CSS files...~%")
+  (fad:walk-directory "site/css" 'generate-css :test 'sass-file-p)
   (format t "Done!~%"))
 
 (defun file-test (pathname)
