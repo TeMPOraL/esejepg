@@ -1,0 +1,13 @@
+<div class="essay-list-entry">
+<h2 class="essay-title"><a href="<%= essay-url %>"><%= essay-title %></a></h2>
+Oryginał: <a href="<%= essay-orig-url %>"><%= essay-orig-title %></a><br />
+<% (if alternative-translations (progn %>Alternatywne tłumaczenia:
+<% (dolist (translation alternative-translations nil) (progn %>
+ <%= translation %>
+<% )) %> <%# progn, dolist #%>
+<br />
+<% )) %> <%# progn, if #%>
+<% (if part-of-hnp %>Ten esej jest częścią książki <a href="http://helion.pl/ksiazki/hakerzy-i-malarze-wielkie-idee-ery-komputerow-paul-graham,hakmal.htm">"Hakerzy i malarze"</a> (<a href="http://paulgraham.com/hackpaint.html">oryginał angielski</a>).<br /><% ) %> <%# endif #%>
+<% (if additional-html %>
+<% ) %> <%# if #%>
+</div>

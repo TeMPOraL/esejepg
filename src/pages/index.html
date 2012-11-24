@@ -1,0 +1,43 @@
+<% (defparameter title "Eseje Paula Grahama w języku polskim") %>
+<%
+(defun essay (&key title url date orig-title orig-url orig-date alt-translations hnp additional-info)
+(setf essay-title title
+      essay-url url
+      creation-date date
+      essay-orig-title orig-title
+      essay-orig-url orig-url
+      orig-creation-date orig-date
+      alternative-translations alt-translations
+      part-of-hnp hnp
+      additional-html additional-info) %>
+  <% @include ../templates/common/essay-list-entry.html %>
+<% ) %> <%# defun #%>
+
+<div id="menu">
+  <ul>
+    <li><a href="">Pytania</a></li>
+    <li><a href="">O serwisie</a></li>
+    <li><a href="">Jak mogę pomóc w tłumaczeniu?</a></li>
+  </ul>
+</div>
+
+<div id="essay-list">
+  <h2>Eseje</h2>
+  <%# TODO uzupełnić listę #%>
+
+  <ul>
+  <li><% (essay :title "[Tytuł będzie jak Asia zrobi]"
+            :url "/essays/hs.html"
+            :orig-title "What You'll Wish You'd Known"
+            :orig-url "http://paulgraham.com/hs.html") %></li>
+
+  <li><% (essay :title "O pisaniu, zwięźle"
+            :url "/essays/hs.html"
+            :orig-title "Writing, Briefly"
+            :orig-url "http://paulgraham.com/writing44.html") %></li>
+  </ul>
+</div>
+
+<div id="news">
+</div>
+
