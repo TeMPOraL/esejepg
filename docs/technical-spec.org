@@ -1,2 +1,22 @@
 #+title: Eseje PG tech spec
+#+startup: hidestars
 
+W sumie takie luźne uwagi bardziej.
+
+
+* Główne cele projektu
+
+** Minimum złożoności - wszystko w postaci static HTML, jeśli to możliwe.
+   Póki nie ma potrzeby na robienie z tego CMSa, wszystko powinno być
+   statycznym HTMLem (+ CSS & JavaScript) - nie ma potrzeby, by palić
+   zasoby na wysyłanie czegoś, co jest w praktyce statycznym tekstem.
+
+** Wsparcie czytania, analizy i dzielenia się
+   Każde możliwe (sensowne) usprawnienie czytania, analizy i dzielenia
+   się powinno być wprowadzone, ale to poważnie musi być usprawnienie,
+   a nie przeszkadzajki.
+
+
+* Generowanie statycznego HTML
+  Dobrze by było móc zregenerować całą stronę z plików do statycznego
+  HTMLa w jakiś prosty sposób. Przydałby się prosty silnik szablonów.
