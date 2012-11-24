@@ -16,10 +16,22 @@
              (search "css/" name)
              (ppcre:scan "site/$" name)))))
 
+(defun make-group-template-path (pathname)
+  (pathname (cl-ppcre:regex-replace "src/([A-Za-z]*)/.*" (namestring pathname) "src/templates/\\1\.html")))
+
+(defun make-destination-path (pathname)
+  (pathname (cl-ppcre:regex-replace "src/" (namestring pathname) "site/")))
+
+
 (defun generate-file (pathname)
   (save-file (process-template pathname)
              (make-destination-path pathname))
   (format t "Regenerated successfuly: ~A (from ~A)~%" (make-destination-path pathname) pathname))
+
+(defun process-template (pathname)
+  (let ((content (cl-emb:execute-emb pathname)))
+    (cl-emb:execute-emb (make-group-template-path pathname)
+                        :env (list :content content))))
 
 (defun save-file (content pathname)
   (ensure-directories-exist pathname)
@@ -27,17 +39,6 @@
                                    :if-exists :overwrite
                                    :if-does-not-exist :create)
     (format stream content)))
-
-(defun process-template (pathname)
-  (let ((content (cl-emb:execute-emb pathname)))
-    (cl-emb:execute-emb (make-group-template-path pathname)
-                        :env (list :content content))))
-
-(defun make-group-template-path (pathname)
-  (pathname (cl-ppcre:regex-replace "src/([A-Za-z]*)/.*" (namestring pathname) "src/templates/\\1\.html")))
-
-(defun make-destination-path (pathname)
-  (pathname (cl-ppcre:regex-replace "src/" (namestring pathname) "site/")))
 
 (defun del-dir-or-file-noerror (pathname)
   (format t "Deleting: ~A~%" pathname)
