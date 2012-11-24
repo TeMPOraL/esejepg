@@ -22,12 +22,6 @@
 (defun make-destination-path (pathname)
   (pathname (cl-ppcre:regex-replace "src/" (namestring pathname) "site/")))
 
-
-(defun generate-file (pathname)
-  (save-file (process-template pathname)
-             (make-destination-path pathname))
-  (format t "Regenerated successfuly: ~A (from ~A)~%" (make-destination-path pathname) pathname))
-
 (defun process-template (pathname)
   (let ((content (cl-emb:execute-emb pathname)))
     (cl-emb:execute-emb (make-group-template-path pathname)
@@ -36,9 +30,14 @@
 (defun save-file (content pathname)
   (ensure-directories-exist pathname)
   (with-open-file (stream pathname :direction :output
-                                   :if-exists :overwrite
-                                   :if-does-not-exist :create)
+                          :if-exists :overwrite
+                          :if-does-not-exist :create)
     (format stream content)))
+
+(defun generate-file (pathname)
+  (save-file (process-template pathname)
+             (make-destination-path pathname))
+  (format t "Regenerated successfuly: ~A (from ~A)~%" (make-destination-path pathname) pathname))
 
 (defun del-dir-or-file-noerror (pathname)
   (format t "Deleting: ~A~%" pathname)
