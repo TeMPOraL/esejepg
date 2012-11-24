@@ -57,6 +57,7 @@
 (defun generate-css (pathname)
   (let ((name (namestring pathname)))
     #+WINDOWS(format t "Running command: /home/temporal/lib/sass/bin/sass --style expanded ~A:~A~%" name (make-css-file-name name))
+    #+LINUX(format t "Converting ~A to ~A~%" name (make-css-file-name name))
     #+LINUX(asdf:run-shell-command "/home/temporal/lib/sass/bin/sass --style expanded" name (make-css-file-name name))))
 
 (defun regenerate ()
