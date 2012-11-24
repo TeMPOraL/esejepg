@@ -14,6 +14,7 @@
   (format t "Regenerated successfuly: ~A (from ~A)~%" (make-destination-path pathname) pathname))
 
 (defun save-file (content pathname)
+  (ensure-directories-exist pathname)
   (with-open-file (stream pathname :direction :output
                                    :if-exists :overwrite
                                    :if-does-not-exist :create)
