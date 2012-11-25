@@ -1,6 +1,6 @@
 (defessay :progbot
     :title "Programowanie metodą wstępującą (ang. bottom-up)"
-    :url "/essays/progbot.html"
+    :url "/eseje/progbot.html"
     :orig-title "Programming Bottom-Up"
     :orig-url "http://paulgraham.com/progbot.html"
     :date "???"
@@ -81,7 +81,7 @@
 
 (defessay :hs
     :title "[Tytuł będzie jak Asia zrobi]"
-    :url "/essays/hs.html"
+    :url "/eseje/hs.html"
     :date "Grudzień 2012"
     :orig-title "What You'll Wish You'd Known"
     :orig-url "http://paulgraham.com/hs.html"
@@ -100,7 +100,7 @@
 
 (defessay :writing44
     :title "O pisaniu, zwięźle"
-    :url "/essays/writing44.html"
+    :url "/eseje/writing44.html"
     :date "Listopad 2012"
     :orig-title "Writing, Briefly"
     :orig-url "http://paulgraham.com/writing44.html"
@@ -173,7 +173,7 @@
 
 (defessay :judgement
     :title "Dwa rodzaje osądów"
-    :url "/essays/judgement.html"
+    :url "/eseje/judgement.html"
     :orig-title "Two Kinds of Judgement"
     :orig-url "http://paulgraham.com/judgement.html"
     :translators '(:aajnoo)
