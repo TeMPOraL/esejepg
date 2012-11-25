@@ -1,0 +1,9 @@
+/* TEAM */
+Webpage creator: Jacek "TeMPOraL Z³ydach
+Contact: temporal.pl@gmail.com
+Twitter: @TeMPOraL_PL
+See also: http://temporal.pr0.pl/devblog
+
+/* TOOLS */
+IDE: Emacs
+Languages: Common Lisp (yes, I'm not joking :P), HTML / SASS (sane CSS) / JavaScript
