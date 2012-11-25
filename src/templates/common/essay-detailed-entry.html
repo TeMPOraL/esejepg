@@ -1,0 +1,21 @@
+<div class="essay-detailed-entry">
+  Current essay: <%= *current-essay* %>
+  Current essay properties: <%= (getf env *current-essay*) %>
+
+  <% (destructuring-bind (&key title url orig-title orig-url date orig-date alt-translations additional-html translators editors disabled part-of-hnp) (getf env *current-essay*) (progn %>
+
+  <h1 class="essay-title"><%= title %></h1>
+  <% (if date (progn %><span class="essay-creation-date"><%= date %><br /></span><% )) %>
+  <span class="essay-original-title">Oryginał: <a href="<%= orig-url %>"><%= orig-title %></a><%(if orig-date (progn %>, <%= orig-date %> <% )) %><br /></span>
+  <% (if translators (progn %><span class="essay-translators">Tłumaczenie: <%= translators %><br /></span><% )) %>
+
+  <% (if editors (progn %><span class="essay-editors">Korekta: <%= editors %><br /></span><% )) %>
+
+  <% (if alt-translations (progn %>Inne tłumaczenia:
+  <span class="alt-translations"><%= (format nil "~{~{<a href=\"~A\">~A</a>~}~^, ~}.~%" alt-translations) %></span><br />
+  <% )) %> <%# progn, if #%>
+
+  <% (if part-of-hnp %><span class="part-of-hnp">Ten esej jest częścią książki <a href="http://helion.pl/ksiazki/hakerzy-i-malarze-wielkie-idee-ery-komputerow-paul-graham,hakmal.htm">"Hakerzy i malarze"</a> (<a href="http://paulgraham.com/hackpaint.html">oryginał angielski</a>).</span><br /><% ) %> <%# endif #%>
+
+<% )) %>  <%# progn, destructuring-bind #%>
+</div>

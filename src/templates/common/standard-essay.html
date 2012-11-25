@@ -1,0 +1,6 @@
+<% (defparameter *current-essay* nil)
+   (defun essay (&key id)
+      (setf *current-essay* id
+             title (getf (getf env id) :title)) %>
+<% @include essay-detailed-entry.html %>
+<% ) %> <%# defun #%>

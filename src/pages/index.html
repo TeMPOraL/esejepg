@@ -11,7 +11,7 @@
 (defparameter additional-html nil)
 (defparameter disable-link nil)
 
-(defun essay (&key title url date orig-title orig-url orig-date alt-translations hnp additional-info disabled)
+(defun essay-1 (&key title url date orig-title orig-url orig-date alt-translations hnp additional-info disabled)
 (setf essay-title title
       essay-url url
       creation-date date
@@ -38,13 +38,13 @@
   <%# TODO uzupełnić listę #%>
 
   <ul>
-    <li><% (essay :title "Dwa rodzaje osądów"
+    <li><% (essay-1 :title "Dwa rodzaje osądów"
                   :url "/essays/judgement.html"
                   :orig-title "Two Kinds of Judgement"
                   :orig-url "http://paulgraham.com/judgement.html"
                   :disabled t) %></li>
 
-    <li><% (essay :title "[Tytuł będzie jak Asia zrobi]"
+    <li><% (essay-1 :title "[Tytuł będzie jak Asia zrobi]"
                   :url "/essays/hs.html"
                   :date "Grudzień 2012"
                   :orig-title "What You'll Wish You'd Known"
@@ -53,7 +53,7 @@
                   :alt-translations '(("http://T1" "T1") ("http://T2" "T2") ("http://T3" "T3"))
                   :disabled t) %></li>
 
-    <li><% (essay :title "O pisaniu, zwięźle"
+    <li><% (essay-1 :title "O pisaniu, zwięźle"
                 :url "/essays/writing44.html"
                 :date "Listopad 2012"
                 :orig-title "Writing, Briefly"
