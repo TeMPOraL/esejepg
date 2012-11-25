@@ -7,15 +7,43 @@ $emphasis-color: #303030;
 $font-stack-serif: georgia, minion, book antiqua, serif;
 $font-stack-sansserif: 'Lucida Grande', Verdana, Arial, Sans-Serif;
 
+/* debug */
+@mixin debug-bgcolor($color) {
+    background-color: $color;
+    border: 2px red;
+}
+
 /* styles */
 
 body {
+    background-color: #F0F0F0;
     font-family: $font-stack-sansserif;
     width: 75%;
     margin: 0 auto;
 }
 
-#menu {
-    ul { list-style-type: none; }
-    li { float: left; }
+#titlebar {
+    margin-bottom: 10px;
+    @include debug-bgcolor(#FEE0E0);
+}
+
+#content {
+    width: 75%px;
+    @include debug-bgcolor(#E0FEE0);
+}
+
+#sidebar {
+    @include debug-bgcolor(#E0E0FE);
+
+    width: 25%;
+    float: right;
+
+    #menu {
+	ul { list-style-type: none; }
+	li { margin-right: 5px; }
+    }
+
+    #social {
+	clear: both;
+    }
 }
