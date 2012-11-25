@@ -104,6 +104,7 @@
     :orig-title "Writing, Briefly"
     :orig-url "http://paulgraham.com/writing44.html"
     :orig-date "Marzec 2005"
+    :part-of-hnp t
     :translators '(:aajnoo :temporal))
 
 ;; Return of the Mac
