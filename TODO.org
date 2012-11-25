@@ -5,12 +5,13 @@
 * TODO Change location of .scss files to /src/
   (need to modify regeneration script)
 
-* TODO Make essay descriptors be located in only one place
+* DONE Make essay descriptors be located in only one place
   (some lisp file loaded before generating templates)
 
 * TODO Analytics
 
-* TODO Meta keywords and description
+* DONE Meta keywords and description
+  Keywords we don't need :).
 
 * TODO humans.txt
 
@@ -19,3 +20,5 @@
 
 * TODO Make the pull-and-regenerate process triggerable from the web.
   Just so that I won't have to connect to the server every time I want to edit a translation.
+
+* TODO Generowanie sitemap

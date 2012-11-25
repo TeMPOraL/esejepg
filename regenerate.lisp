@@ -36,6 +36,7 @@ oldest."
     (not (or (search "img/" name)
              (search "js/" name)
              (search "css/" name)
+             (ppcre:scan "humans.txt/$" name)
              (ppcre:scan "site/$" name)))))
 
 (defun make-group-template-path (pathname)

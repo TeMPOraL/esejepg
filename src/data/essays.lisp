@@ -89,8 +89,6 @@
     :alt-translations '(("http://T1" "T1") ("http://T2" "T2") ("http://T3" "T3"))
     :translators '(:aajnoo)
     :editors '(:temporal)
-    :disabled t
-    :part-of-hnp t
     :description "TEST")
 
 ;; How to Start a Startup
