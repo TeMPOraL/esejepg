@@ -1,8 +1,5 @@
 <div class="essay-detailed-entry">
-  Current essay: <%= *current-essay* %>
-  Current essay properties: <%= (getf env *current-essay*) %>
-
-  <% (destructuring-bind (&key title url orig-title orig-url date orig-date alt-translations additional-html translators editors disabled part-of-hnp) (getf env *current-essay*) (progn %>
+  <% (destructuring-bind (&key title url orig-title orig-url date orig-date alt-translations additional-html translators editors disabled part-of-hnp description) (getf (getf env :essays) *current-essay*) (progn %>
 
   <h1 class="essay-title"><%= title %></h1>
   <% (if date (progn %><span class="essay-creation-date"><%= date %><br /></span><% )) %>

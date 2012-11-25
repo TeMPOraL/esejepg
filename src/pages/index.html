@@ -1,29 +1,5 @@
 <% (defparameter title "Eseje Paula Grahama w języku polskim") %>
-<%
-(defparameter essay-title nil)
-(defparameter essay-url nil)
-(defparameter creation-date nil)
-(defparameter essay-orig-title nil)
-(defparameter essay-orig-url nil)
-(defparameter orig-creation-date nil)
-(defparameter alternative-translations nil)
-(defparameter part-of-hnp nil)
-(defparameter additional-html nil)
-(defparameter disable-link nil)
-
-(defun essay-1 (&key title url date orig-title orig-url orig-date alt-translations hnp additional-info disabled)
-(setf essay-title title
-      essay-url url
-      creation-date date
-      essay-orig-title orig-title
-      essay-orig-url orig-url
-      orig-creation-date orig-date
-      alternative-translations alt-translations
-      part-of-hnp hnp
-      additional-html additional-info
-      disable-link disabled) %>
-  <% @include ../templates/common/essay-list-entry.html %>
-<% ) %> <%# defun #%>
+<% @include ../templates/common/standard-essay-item.html %>
 
 <div id="menu">
   <ul>
@@ -38,27 +14,8 @@
   <%# TODO uzupełnić listę #%>
 
   <ul>
-    <li><% (essay-1 :title "Dwa rodzaje osądów"
-                  :url "/essays/judgement.html"
-                  :orig-title "Two Kinds of Judgement"
-                  :orig-url "http://paulgraham.com/judgement.html"
-                  :disabled t) %></li>
-
-    <li><% (essay-1 :title "[Tytuł będzie jak Asia zrobi]"
-                  :url "/essays/hs.html"
-                  :date "Grudzień 2012"
-                  :orig-title "What You'll Wish You'd Known"
-                  :orig-url "http://paulgraham.com/hs.html"
-                  :orig-date "Kwiecień 2007"
-                  :alt-translations '(("http://T1" "T1") ("http://T2" "T2") ("http://T3" "T3"))
-                  :disabled t) %></li>
-
-    <li><% (essay-1 :title "O pisaniu, zwięźle"
-                :url "/essays/writing44.html"
-                :date "Listopad 2012"
-                :orig-title "Writing, Briefly"
-                :orig-url "http://paulgraham.com/writing44.html"
-                :orig-date "Marzec 2005") %></li>
+    <%# thank you, Theerasak Photha (http://www.thelinuxlink.net/pipermail/lvlug/2007-January/017213.html), for this looping construct #%>
+    <% (loop for (key descr) on (getf env :essays) by #'cddr do (progn %><li><% (essay :id key)) %></li><% )) %> <%# progn, loop #%>
   </ul>
 </div>
 

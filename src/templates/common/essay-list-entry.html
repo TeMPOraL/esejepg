@@ -1,14 +1,25 @@
 <div class="essay-list-entry">
-<% (if disable-link (progn %> <h2 class="essay-title disabled"><%= essay-title %></h2>
-<%) (progn %><h2 class="essay-title"><a href="<%= essay-url %>"><%= essay-title %></a></h2><% )) %> <%# progn, if #%>
-<% (if creation-date (progn %><span class="creation-date"><%= creation-date %><span><br /><% )) %> <%# progn, if #%>
-<span class="original-essay">Oryginał: <a href="<%= essay-orig-url %>"><%= essay-orig-title %></a></span><br />
-<% (if orig-creation-date (progn %><span class="original-creation-date"><%= orig-creation-date %><span><br /><% )) %> <%# progn, if #%>
-<% (if alternative-translations (progn %>Inne tłumaczenia:
-<span class="alternative-translations"><%= (format nil "~{~{<a href=\"~A\">~A</a>~}~^, ~}.~%" alternative-translations) %></span><br />
-<% )) %> <%# progn, if #%>
-<% (if part-of-hnp %><span class="part-of-hnp">Ten esej jest częścią książki <a href="http://helion.pl/ksiazki/hakerzy-i-malarze-wielkie-idee-ery-komputerow-paul-graham,hakmal.htm">"Hakerzy i malarze"</a> (<a href="http://paulgraham.com/hackpaint.html">oryginał angielski</a>).</span><br /><% ) %> <%# endif #%>
-<% (if additional-html (progn %>
-<span class="additional-html"><%= additional-html %></span><br />
-<% )) %> <%# progn, if #%>
+  <% (destructuring-bind (&key title url orig-title orig-url date orig-date alt-translations additional-html translators editors disabled part-of-hnp description) (getf (getf env :essays) *current-essay*) (progn %>
+
+  <% (if disabled (progn %><h2 class="essay-title disabled"><%= title %></h2>
+  <%) (progn %><h2 class="essay-title"><a href="<%= url %>"><%= title %></a></h2><% )) %> <%# progn, if #%>
+
+  <% (if date (progn %><span class="essay-creation-date"><%= date %><br /></span><% )) %>
+  <span class="essay-original-title">Oryginał: <a href="<%= orig-url %>"><%= orig-title %></a><%(if orig-date (progn %>, <%= orig-date %> <% )) %><br /></span>
+
+  <% (if alt-translations (progn %>Inne tłumaczenia:
+  <span class="alt-translations"><%= (format nil "~{~{<a href=\"~A\">~A</a>~}~^, ~}.~%" alt-translations) %></span><br />
+  <% )) %> <%# progn, if #%>
+
+  <% (if part-of-hnp %><span class="part-of-hnp">Ten esej jest częścią książki <a href="http://helion.pl/ksiazki/hakerzy-i-malarze-wielkie-idee-ery-komputerow-paul-graham,hakmal.htm">"Hakerzy i malarze"</a> (<a href="http://paulgraham.com/hackpaint.html">oryginał angielski</a>).</span><br /><% ) %> <%# endif #%>
+
+  <% (if description (progn %>
+  <span class="description"><%= description %></span><br />
+  <% )) %> <%# progn, if #%>
+
+  <% (if additional-html (progn %>
+  <span class="additional-html"><%= additional-html %></span><br />
+  <% )) %> <%# progn, if #%>
+
+<% )) %>  <%# progn, destructuring-bind #%>
 </div>
