@@ -2,9 +2,9 @@
   <% (destructuring-bind (&key title url orig-title orig-url date orig-date alt-translations additional-html translators editors disabled part-of-hnp description) (getf (getf env :essays) *current-essay*) (progn %>
 
   <h1 class="essay-title"><%= title %></h1>
-  <% (if date (progn %><span class="essay-creation-date"><%= date %><br /></span><% )) %>
+  
   <span class="essay-original-title">Oryginał: <a href="<%= orig-url %>"><%= orig-title %></a><%(if orig-date (progn %>, <%= orig-date %> <% )) %><br /></span>
-  <% (if translators (progn %><span class="essay-translators">Tłumaczenie: <%= translators %><br /></span><% )) %>
+  <% (if translators (progn %><span class="essay-translators">Tłumaczenie: <%= translators %> <% (if date (progn %><span class="essay-creation-date">,<%= date %><br /></span><% )) %><br /></span><% )) %>
 
   <% (if editors (progn %><span class="essay-editors">Korekta: <%= editors %><br /></span><% )) %>
 

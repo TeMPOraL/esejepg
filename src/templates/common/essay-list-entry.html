@@ -4,7 +4,6 @@
   <% (if disabled (progn %><h2 class="essay-title disabled"><%= title %></h2>
   <%) (progn %><h2 class="essay-title"><a href="<%= url %>"><%= title %></a></h2><% )) %> <%# progn, if #%>
 
-  <% (if date (progn %><span class="essay-creation-date"><%= date %><br /></span><% )) %>
   <span class="essay-original-title">Oryginał: <a href="<%= orig-url %>"><%= orig-title %></a><%(if orig-date (progn %>, <%= orig-date %> <% )) %><br /></span>
 
   <% (if alt-translations (progn %>
