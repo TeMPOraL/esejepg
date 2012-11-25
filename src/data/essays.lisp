@@ -90,7 +90,8 @@
     :translators '(:aajnoo)
     :editors '(:temporal)
     :disabled t
-    :part-of-hnp t)
+    :part-of-hnp t
+    :description "TEST")
 
 ;; How to Start a Startup
 
