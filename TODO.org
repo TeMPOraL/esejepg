@@ -15,9 +15,6 @@
 
 * DONE humans.txt
 
-* TODO Put commit number into documents somehow.
-  Or at least on feedback utility, if possible.
-
 * TODO Make the pull-and-regenerate process triggerable from the web.
   Just so that I won't have to connect to the server every time I want to edit a translation.
 
