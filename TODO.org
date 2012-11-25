@@ -21,3 +21,5 @@
 * TODO Sitemap generation (for google)
 
 * TODO Comment regenerate.lisp well while you still remember what it does.
+
+* TODO Wszystkie javascriptowe bajery :)
