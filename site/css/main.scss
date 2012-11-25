@@ -1,1 +1,21 @@
-h1 { }
+/* main (shared) style for esejepg.pl */
+
+/* variables */
+$main-color: #303030;
+$emphasis-color: #303030;
+
+$font-stack-serif: georgia, minion, book antiqua, serif;
+$font-stack-sansserif: 'Lucida Grande', Verdana, Arial, Sans-Serif;
+
+/* styles */
+
+body {
+    font-family: $font-stack-sansserif;
+    width: 75%;
+    margin: 0 auto;
+}
+
+#menu {
+    ul { list-style-type: none; }
+    li { float: left; }
+}
