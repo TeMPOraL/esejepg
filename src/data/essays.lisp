@@ -318,12 +318,24 @@
 
 ;; Writing and Speaking
 
-;; The Top of My Todo List
+(defessay :todo
+    :title "Szczyt mojej listy rzeczy do zrobienia"
+    :url "/eseje/todo.html"
+    :orig-title "The Top of My Todo List"
+    :orig-url "http://paulgraham.com/todo.html"
+    :orig-date "Kwiecień 2012"
+    :disabled t)
 
 ;; Black Swan Farming
 
 ;; Startup = Growth
 
-;; The Hardware Renaissance
+(defessay :hw
+    :title "Renesans Sprzętowy"
+    :url "/eseje/hw.html"
+    :orig-title "The Hardware Renaissance"
+    :orig-url "http://paulgraham.com/hw.html"
+    :orig-date "Październik 2012"
+    :disabled t)
 
 ;; How to Get Startup Ideas
