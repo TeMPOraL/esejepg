@@ -25,4 +25,5 @@
 * TODO Wszystkie javascriptowe bajery :)
   W tym JS-powered paragraph links.
 * TODO App-side caching via HTML5/JS API
+  http://www.html5rocks.com/en/tutorials/appcache/beginner/
 * TODO 
