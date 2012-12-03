@@ -87,7 +87,7 @@
     :orig-url "http://paulgraham.com/hs.html"
     :orig-date "Kwiecień 2007"
     :alt-translations '(("http://T1" "T1") ("http://T2" "T2") ("http://T3" "T3"))
-    :translators '(:aajnoo)
+    :translators '(:aajnno)
     :editors '(:temporal)
     :description "TEST")
 
@@ -105,7 +105,7 @@
     :orig-url "http://paulgraham.com/writing44.html"
     :orig-date "Marzec 2005"
     :part-of-hnp t
-    :translators '(:aajnoo :temporal))
+    :translators '(:aajnno :temporal))
 
 ;; Return of the Mac
 
@@ -176,7 +176,7 @@
     :url "/eseje/judgement.html"
     :orig-title "Two Kinds of Judgement"
     :orig-url "http://paulgraham.com/judgement.html"
-    :translators '(:aajnoo)
+    :translators '(:aajnno)
     :editors '(:temporal)
     :disabled t)
 
