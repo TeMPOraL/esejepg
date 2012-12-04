@@ -2,6 +2,11 @@
 #+startup: hidestars
 
 
+* TODO Styling
+  - [ ] proper vertical spacing
+  - [ ] proper paragraph alignment
+  - [ ] column for footnotes
+  - [ ] footnotes and translation footnotes
 * TODO Change location of .scss files to /src/
   (need to modify regeneration script)
 

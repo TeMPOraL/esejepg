@@ -100,11 +100,10 @@
 (defessay :writing44
     :title "O pisaniu, zwięźle"
     :url "/eseje/writing44.html"
-    :date "Listopad 2012"
+    :date "Grudzień 2012"
     :orig-title "Writing, Briefly"
     :orig-url "http://paulgraham.com/writing44.html"
     :orig-date "Marzec 2005"
-    :part-of-hnp t
     :translators '(:aajnno :temporal))
 
 ;; Return of the Mac
