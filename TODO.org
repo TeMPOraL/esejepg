@@ -3,10 +3,16 @@
 
 
 * TODO Styling
-  - [ ] proper vertical spacing
+  - [ ] proper vertical spacing (line, paragraphs)
   - [ ] proper paragraph alignment
   - [ ] column for footnotes
   - [ ] footnotes and translation footnotes
+  - [ ] text size
+  - [ ] footnotes
+  - [ ] general visual styling
+  - [ ] headers (in essay)
+  - [ ] <em> as italics
+  - [ ] 
 * TODO Change location of .scss files to /src/
   (need to modify regeneration script)
 

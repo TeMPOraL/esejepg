@@ -105,7 +105,7 @@
     :orig-url "http://paulgraham.com/writing44.html"
     :orig-date "Marzec 2005"
     :translators '(:aajnno :temporal)
-    :description "Wysoce skondensowane porady, jak pisać eseje. Esencja pisarstwa w kilku zdaniach.")
+    :description "Wysoce skondensowany poradnik pisania esejów. Esencja pisarstwa w kilku zdaniach.")
 
 ;; Return of the Mac
 
