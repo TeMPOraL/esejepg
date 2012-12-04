@@ -1,1 +1,15 @@
 h1 { }
+
+#content {
+    h1 {
+	font-size: 2em;
+	text-align: center;
+    }
+    width: 66%;
+} 
+
+.footnote {
+    position: absolute;
+    left: 500px;
+    width: 300px%;
+}
