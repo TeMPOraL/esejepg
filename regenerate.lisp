@@ -101,7 +101,7 @@ oldest."
   (fad:walk-directory "src" 'generate-file :test 'template-to-generate-file-from-p)
 
   (format t "Regenerating CSS files...~%")
-  (fad:walk-directory "site/css" 'generate-css :test 'sass-file-p)
+  (fad:walk-directory "src/css" 'generate-css :test 'sass-file-p)
 
   (format t "Done!~%"))
 
