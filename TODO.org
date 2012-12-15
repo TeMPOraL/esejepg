@@ -13,13 +13,13 @@
   - [ ] headers (in essay)
   - [ ] <em> as italics
   - [ ] 
-* TODO Change location of .scss files to /src/
+* DONE Change location of .scss files to /src/
   (need to modify regeneration script)
 
 * DONE Make essay descriptors be located in only one place
   (some lisp file loaded before generating templates)
 
-* TODO Analytics
+* DONE Analytics
 
 * DONE Meta keywords and description
   Keywords we don't need :).
@@ -31,7 +31,7 @@
 
 * TODO Sitemap generation (for google)
 
-* TODO Comment regenerate.lisp well while you still remember what it does.
+* DONE Comment regenerate.lisp well while you still remember what it does.
 
 * TODO Wszystkie javascriptowe bajery :)
   W tym JS-powered paragraph links.
