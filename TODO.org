@@ -35,6 +35,7 @@
 
 * TODO Wszystkie javascriptowe bajery :)
   W tym JS-powered paragraph links.
+
 * TODO App-side caching via HTML5/JS API
   http://www.html5rocks.com/en/tutorials/appcache/beginner/
 * TODO Box do zapisywania się na newsletter
@@ -52,4 +53,4 @@
   - [ ] Wykop
   - [ ] et al
 
-* TODO Meta Descriptions na stronach
+* DONE Meta Descriptions for pages
