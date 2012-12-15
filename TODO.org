@@ -37,4 +37,9 @@
   W tym JS-powered paragraph links.
 * TODO App-side caching via HTML5/JS API
   http://www.html5rocks.com/en/tutorials/appcache/beginner/
-* TODO 
+* TODO Box do zapisywania się na newsletter
+  box pozwalający zapisać się na mailowe update'y o nowych tłumaczeniach
+  (i tylko tyle!)
+* TODO Social buttons
+
+* TODO Meta Descriptions na stronach

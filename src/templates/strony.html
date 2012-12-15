@@ -11,6 +11,13 @@
     <script type="text/javascript" src="/js/main.js"></script>
     <script type="text/javascript" src="/js/pages.js"></script>
 
+    <script type="text/javascript">
+      analytics.initialize({
+          'Google Analytics' : {
+              trackingId : 'UA-37072941-1',
+              enhancedLinkAttribution : true
+          }});
+    </script>
 
     <link rel="stylesheet" href="/css/cssreset-min.css" type="text/css" />
     <link rel="stylesheet" href="/css/main.css" type="text/css" />
@@ -41,5 +48,8 @@
         <% @var content %>
       </div>
     </div>
+    <script type="text/js">
+      analytics.identify('reader');
+    </script>
   </body>
 </html>

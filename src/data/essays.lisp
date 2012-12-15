@@ -257,6 +257,13 @@
 ;; A Local Revolution?
 
 ;; Maker's Schedule, Manager's Schedule 
+(defessay :makersschedule
+    :title "[todo]"
+    :url "/eseje/makersschedule.html"
+    :orig-title "Two Kinds of Judgement"
+    :orig-url "http://paulgraham.com/makersschedule.html"
+    :translators '(:temporal)
+    :disabled t)
 
 ;; Ramen Profitable
 
