@@ -260,8 +260,9 @@
 (defessay :makersschedule
     :title "[todo]"
     :url "/eseje/makersschedule.html"
-    :orig-title "Two Kinds of Judgement"
+    :orig-title "Maker's Schedule, Manager's Schedule"
     :orig-url "http://paulgraham.com/makersschedule.html"
+    :orig-date "Lipiec 2009"
     :translators '(:temporal)
     :disabled t)
 
