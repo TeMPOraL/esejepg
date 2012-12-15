@@ -81,7 +81,9 @@ oldest."
 
 (defun generate-css (pathname)
   (let* ((name (namestring pathname))
-         (command (format nil "/home/temporal/lib/sass/bin/sass --style expanded ~A:~A" name (make-css-file-name name))))
+         (css-name (make-css-file-name name))
+         (command (format nil "/home/temporal/lib/sass/bin/sass --style expanded ~A:~A" name css-name)))
+    (ensure-directories-exist css-name)
     (format t "Running command: ~A~%" command)
     #+LINUX(asdf:run-shell-command command)))
 
