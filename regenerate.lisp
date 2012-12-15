@@ -24,7 +24,8 @@ oldest."
 (defun template-to-generate-file-from-p (path)
   "Returns t if given file should generate a corresponding HTML in source."
   (not (or (search "templates/" (namestring path))
-           (search "data/" (namestring path)))))
+           (search "data/" (namestring path))
+           (search "css/" (namestring path)))))
 
 (defun sass-file-p (path)
   "Returns t if file has .scss extension (SASS stylesheet)."
@@ -35,7 +36,6 @@ oldest."
   (let ((name (namestring path)))
     (not (or (search "img/" name)
              (search "js/" name)
-             (search "css/" name)
              (ppcre:scan "humans.txt$" name)
              (ppcre:scan "site/$" name)))))
 
@@ -73,7 +73,11 @@ oldest."
     (fad:walk-directory "site" 'del-dir-or-file-noerror :test 'file-or-dir-to-delete-p :if-does-not-exist :ignore :directories t)))
 
 (defun make-css-file-name (name)
-  (cl-ppcre:regex-replace "\.scss$" name ".css"))
+  (cl-ppcre:regex-replace "src/"
+                          (cl-ppcre:regex-replace "\.scss$"
+                                                  name
+                                                  ".css")
+                          "site/"))
 
 (defun generate-css (pathname)
   (let* ((name (namestring pathname))
