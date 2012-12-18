@@ -48,9 +48,12 @@
 
 * TODO Social buttons for essays
   See if you can find some social plugins that could handle all of this.
+  Probably need to include some open-graph metadata & stuff.
   - [ ] Facebook Like
   - [ ] Share on Twitter
   - [ ] Wykop
   - [ ] et al
 
 * DONE Meta Descriptions for pages
+
+* TODO Ensure essays are readable on Instapaper, Pocket and whatever else people use.
