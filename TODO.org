@@ -33,7 +33,7 @@
 
 * DONE Comment regenerate.lisp well while you still remember what it does.
 
-* TODO Wszystkie javascriptowe bajery :)
+* DONE Wszystkie javascriptowe bajery :)
   W tym JS-powered paragraph links.
 
 * TODO App-side caching via HTML5/JS API
