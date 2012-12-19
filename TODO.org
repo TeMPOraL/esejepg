@@ -29,7 +29,7 @@
 * TODO Make the pull-and-regenerate process triggerable from the web.
   Just so that I won't have to connect to the server every time I want to edit a translation.
 
-* TODO Sitemap generation
+* DONE Sitemap generation
   http://www.sitemaps.org/protocol.html
   The simplest way would be to list all HTML files and use them to output a basic sitemap :).
 
@@ -63,7 +63,7 @@
 
 * TODO Ensure essays are readable on Instapaper, Pocket and whatever else people use.
 
-* TODO robots.txt
+* DONE robots.txt
 
 * TODO favicon.ico
 
