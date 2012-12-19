@@ -1,19 +1,28 @@
-h1 { }
+h1 { 
+}
 
 #content {
     h1 {
 	font-size: 2em;
 	text-align: center;
+	margin-top: 1em;
+	margin-bottom: 1em;
     }
     width: 66%;
 
     .paragraph-link {
         text-decoration: none;
     }
+
+    p {
+	font-size: 14px;
+    }
 } 
 
 .footnote {
     position: absolute;
     left: 500px;
-    width: 300px%;
+    width: 300px;
+    font-size: 11px;
+    line-height: 1.2em;
 }

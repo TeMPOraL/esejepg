@@ -1,7 +1,9 @@
 /* main (shared) style for esejepg.pl */
 
 /* variables */
-$main-color: #303030;
+$main-text-color: #444444;
+$main-header-color: #000000;
+$secondary-header-color: #222222;
 $emphasis-color: #303030;
 
 $font-stack-serif: georgia, minion, book antiqua, serif;
@@ -72,14 +74,23 @@ body {
 /** typography */
 body {
     font-family: $font-stack-sansserif;
-    font-size: 10pt;
+    color: $main-text-color;
 }
 
 p {
     text-align: justify;
     margin-bottom: 20px;
+    line-height: 1.5em;
 }
 
 em {
     font-style: italic;
+}
+
+h1 {
+    color: $main-header-color;
+}
+
+h2 {
+    color: $secondary-header-color;
 }
