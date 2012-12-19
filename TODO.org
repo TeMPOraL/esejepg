@@ -29,7 +29,9 @@
 * TODO Make the pull-and-regenerate process triggerable from the web.
   Just so that I won't have to connect to the server every time I want to edit a translation.
 
-* TODO Sitemap generation (for google)
+* TODO Sitemap generation
+  http://www.sitemaps.org/protocol.html
+  The simplest way would be to list all HTML files and use them to output a basic sitemap :).
 
 * DONE Comment regenerate.lisp well while you still remember what it does.
 
@@ -38,9 +40,8 @@
 
 * TODO App-side caching via HTML5/JS API
   http://www.html5rocks.com/en/tutorials/appcache/beginner/
-* TODO Box do zapisywania się na newsletter
-  box pozwalający zapisać się na mailowe update'y o nowych tłumaczeniach
-  (i tylko tyle!)
+* TODO Sign up for newsletter box
+  Just reminders about new essays.
 * TODO Social buttons for page
   - [ ] Facebook Fanpage
   - [ ] Twitter for following
@@ -57,3 +58,5 @@
 * DONE Meta Descriptions for pages
 
 * TODO Ensure essays are readable on Instapaper, Pocket and whatever else people use.
+
+* TODO robots.txt
