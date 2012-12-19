@@ -40,7 +40,7 @@ oldest."
   (let ((name (namestring path)))
     (not (or (search "img/" name)
              (search "js/" name)
-             (ppcre:scan "humans.txt$" name)
+             (ppcre:scan ".*\.txt$" name)
              (ppcre:scan "site/$" name)))))
 
 (defun make-group-template-path (pathname)
