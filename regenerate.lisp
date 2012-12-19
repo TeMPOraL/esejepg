@@ -98,11 +98,28 @@ oldest."
     (format t "Running command: ~A~%" command)
     #+LINUX(asdf:run-shell-command command)))
 
+;; sitemap
+(defun write-sitemap-preamble (stream)
+  (format t "Preamble~%"))
+
+(defun write-sitemap-entry (stream name)
+  (format t "Entry: ~A~%" name))
+
+(defun write-sitemap-postamble (stream)
+  (format t "Postamble~%"))
+
+(defun html-file-p (path)
+  (ppcre:scan "\.scss$" (namestring path))
 
 (defun generate-sitemap ()
   "Generate sitemap XML file for search engines."
-  ;; TODO
-)
+  (with-open-file (stream +sitemap-name+
+                          :direction :output
+                          :if-exists :overwrite
+                          :if-does-not-exist :create)
+    (write-sitemap-preamble stream)
+    (fad:walk-directory "site" (lambda (name) (write-sitemap-entry stream name)) :test 'html-file-p)
+    (write-sitemap-postamble stream)))
 
 (defun regenerate ()
   "Regenerate all static HTML from template files in src/ directory, and put them in site/ directory."
