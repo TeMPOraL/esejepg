@@ -63,7 +63,7 @@
 
 * TODO Ensure essays are readable on Instapaper, Pocket and whatever else people use.
 
-* TODO robots.txt
+* DONE robots.txt
 
 * TODO favicon.ico
 
