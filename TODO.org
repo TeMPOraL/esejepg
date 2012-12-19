@@ -12,7 +12,7 @@
   - [ ] general visual styling
   - [ ] headers (in essay)
   - [ ] <em> as italics
-  - [ ] 
+  - [ ] social buttons
 * DONE Change location of .scss files to /src/
   (need to modify regeneration script)
 
