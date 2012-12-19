@@ -42,9 +42,10 @@
   http://www.html5rocks.com/en/tutorials/appcache/beginner/
 * TODO Sign up for newsletter box
   Just reminders about new essays.
-* TODO Social buttons for page
-  - [ ] Facebook Fanpage
-  - [ ] Twitter for following
+* DONE Social buttons for page
+  - [X] Facebook Fanpage
+  - [X] Twitter for following
+  - [X] Gogle Plus :)
 
 
 * TODO Social buttons for essays
