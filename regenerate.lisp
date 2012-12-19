@@ -98,6 +98,12 @@ oldest."
     (format t "Running command: ~A~%" command)
     #+LINUX(asdf:run-shell-command command)))
 
+
+(defun generate-sitemap ()
+  "Generate sitemap XML file for search engines."
+  ;; TODO
+)
+
 (defun regenerate ()
   "Regenerate all static HTML from template files in src/ directory, and put them in site/ directory."
   (format t "Deleting old files...~%")
@@ -115,5 +121,8 @@ oldest."
 
   (format t "Regenerating CSS files...~%")
   (fad:walk-directory "src/css" 'generate-css :test 'sass-file-p)
+
+  (format t "Generating sitemap...~%")
+  (generate-sitemap)
 
   (format t "Done!~%"))
