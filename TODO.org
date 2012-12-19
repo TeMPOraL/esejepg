@@ -70,3 +70,8 @@
 * TODO picture (for open graph)
 
 * TODO FB tags for page Insights (after 30+ likes)
+
+* TODO print CSS (and other media, as needed)
+
+* TODO Replace translator symbols with real names
+  (probably need to build a translator database in a new lisp file)
