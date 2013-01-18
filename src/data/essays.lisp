@@ -7,7 +7,7 @@
     :orig-date "1993"
     :translators '(:temporal)
     :disabled t
-    :description "Taki sobie opis.")
+    :description "W trakcie przekładu.")
 
 ;; Chapter 2 of Ansi Common Lisp
 
