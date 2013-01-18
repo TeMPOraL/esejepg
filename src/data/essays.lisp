@@ -177,8 +177,7 @@
     :orig-title "Two Kinds of Judgement"
     :orig-url "http://paulgraham.com/judgement.html"
     :translators '(:aajnno)
-    :editors '(:temporal)
-    :disabled t)
+    :editors '(:temporal))
 
 ;; The Hacker's Guide to Investors
 
