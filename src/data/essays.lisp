@@ -80,12 +80,12 @@
 ;; Made in USA
 
 (defessay :hs
-    :title "[Tytuł będzie jak Asia zrobi]"
+    :title "Co będziecie chcieli, żeby ktoś był powiedział Wam wcześniej"
     :url "/eseje/hs.html"
-    :date "Grudzień 2012"
+    :date "Styczeń 2012"
     :orig-title "What You'll Wish You'd Known"
     :orig-url "http://paulgraham.com/hs.html"
-    :orig-date "Kwiecień 2007"
+    :orig-date "Styczeń 2005"
     :alt-translations '(("http://T1" "T1") ("http://T2" "T2") ("http://T3" "T3"))
     :translators '(:aajnno)
     :editors '(:temporal)
@@ -176,8 +176,10 @@
     :url "/eseje/judgement.html"
     :orig-title "Two Kinds of Judgement"
     :orig-url "http://paulgraham.com/judgement.html"
+    :orig-date "Kwiecien 2007"
     :translators '(:aajnno)
-    :editors '(:temporal))
+    :editors '(:temporal)
+    :description "")
 
 ;; The Hacker's Guide to Investors
 
