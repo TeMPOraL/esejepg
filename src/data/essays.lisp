@@ -3,11 +3,11 @@
     :url "/eseje/progbot.html"
     :orig-title "Programming Bottom-Up"
     :orig-url "http://paulgraham.com/progbot.html"
-    :date "???"
+    :date "Styczeń 2013"
     :orig-date "1993"
     :translators '(:temporal)
-    :disabled t
-    :description "W trakcie przekładu.")
+    :editors '(:aajnno)
+    :description "O całkowicie odmiennym spojrzeniu na projektowanie i pisanie oprogramowania, jakie oferuje nam Lisp.")
 
 ;; Chapter 2 of Ansi Common Lisp
 
@@ -33,7 +33,15 @@
 
 ;; Taste for Makers
 
-;; What Languages Fix
+(defessay :fix
+    :title "Co rozwiązują języki"
+    :url "/eseje/fix.html"
+    :orig-title "What Languages Fix"
+    :orig-url "http://paulgraham.com/fix.html"
+    :date "Styczeń 2013"
+    :translators '(:temporal)
+    :editors '(:aajnno)
+    :description "Tylko częściowo humorystyczne, jednozdaniowe podsumowania znanych języków programowania.")
 
 ;; Succinctness is Power
 
@@ -82,7 +90,7 @@
 (defessay :hs
     :title "Co będziecie chcieli, żeby ktoś był powiedział Wam wcześniej"
     :url "/eseje/hs.html"
-    :date "Styczeń 2012"
+    :date "Styczeń 2013"
     :orig-title "What You'll Wish You'd Known"
     :orig-url "http://paulgraham.com/hs.html"
     :orig-date "Styczeń 2005"
@@ -174,12 +182,13 @@
 (defessay :judgement
     :title "Dwa rodzaje osądów"
     :url "/eseje/judgement.html"
+    :date "Styczeń 2013"
     :orig-title "Two Kinds of Judgement"
     :orig-url "http://paulgraham.com/judgement.html"
     :orig-date "Kwiecien 2007"
     :translators '(:aajnno)
     :editors '(:temporal)
-    :description "")
+    :description "Dlaczego nie każdą ocenę należy odbierać osobiście, i jak odróżnić od siebie dwa rodzaje osądu?")
 
 ;; The Hacker's Guide to Investors
 
@@ -259,13 +268,15 @@
 
 ;; Maker's Schedule, Manager's Schedule 
 (defessay :makersschedule
-    :title "[todo]"
+    :title "Harmonogram twórcy, harmonogram menadżera"
     :url "/eseje/makersschedule.html"
+    :date "Styczeń 2013"
     :orig-title "Maker's Schedule, Manager's Schedule"
     :orig-url "http://paulgraham.com/makersschedule.html"
     :orig-date "Lipiec 2009"
-    :translators '(:temporal)
-    :disabled t)
+    :translators '(:aajnno)
+    :editors '(:temporal)
+    :description "Dlaczego programiści i menadżerowie tak często nie potrafią się dogadać ze sobą?")
 
 ;; Ramen Profitable
 
@@ -330,21 +341,25 @@
 (defessay :todo
     :title "Szczyt mojej listy rzeczy do zrobienia"
     :url "/eseje/todo.html"
+    :date "Styczeń 2013"
     :orig-title "The Top of My Todo List"
     :orig-url "http://paulgraham.com/todo.html"
     :orig-date "Kwiecień 2012"
-    :disabled t)
+    :translators '(:aajnno)
+    :editors '(:temporal))
 
 ;; Black Swan Farming
 
 ;; Startup = Growth
 
 (defessay :hw
-    :title "Renesans Sprzętowy"
+    :title "Renesans Sprzętu"
     :url "/eseje/hw.html"
+    :date "Styczeń 2013"
     :orig-title "The Hardware Renaissance"
     :orig-url "http://paulgraham.com/hw.html"
     :orig-date "Październik 2012"
-    :disabled t)
+    :translators '(:temporal)
+    :editors '(:aajnno))
 
 ;; How to Get Startup Ideas
