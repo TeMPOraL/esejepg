@@ -13,7 +13,7 @@
   - [ ] headers (in essay)
   - [ ] <em> as italics
   - [ ] social buttons
-* TODO Smaller text font
+* DONE Smaller text font
 * TODO Make the pull-and-regenerate process triggerable from the web.
   Just so that I won't have to connect to the server every time I want to edit a translation.
 
