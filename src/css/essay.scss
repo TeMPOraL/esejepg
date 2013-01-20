@@ -1,28 +1,57 @@
+body {
+    width: 560px;
+    padding: 1.5em 25px 1.5em 70px;
+}
+
 h1 { 
 }
 
 #content {
     h1 {
-	font-size: 2em;
+	font-size: 26px;
 	text-align: center;
-	margin-top: 1em;
-	margin-bottom: 1em;
+	margin-bottom: 15px;
     }
-    width: 66%;
-
     .paragraph-link {
         text-decoration: none;
     }
 
     p {
-	font-size: 14px;
-    }
-} 
 
-.footnote {
-    position: absolute;
-    left: 500px;
-    width: 300px;
-    font-size: 11px;
-    line-height: 1.2em;
-}
+    }
+
+    font-size: 14px;
+    line-height: 20px;
+
+    .essay-detailed-entry {
+	font-size: 11px;
+	margin-top: 5px;
+	margin-bottom: 20px;
+	text-align: center;
+	line-height: 12px;
+	span {
+	    margin-bottom: 2px;
+	}
+    }
+
+    .paragraph-link {
+	position: absolute;
+	left: 60px;
+	color: #FFFFFF;
+    }
+
+    .footnote {
+	position: absolute;
+	left: 660px;
+	width: 300px;
+	font-size: 12px;
+	line-height: 14px;
+	padding-left: 10px;
+    }
+
+    a.footnote {
+	vertical-align: super;
+	font-size: 70%;
+    }
+
+} 

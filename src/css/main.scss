@@ -7,7 +7,7 @@ $secondary-header-color: #222222;
 $emphasis-color: #303030;
 
 $font-stack-serif: georgia, minion, book antiqua, serif;
-$font-stack-sansserif: 'Lucida Grande', Verdana, Arial, Sans-Serif;
+$font-stack-sansserif: "Helvetica Neue", Helvetica, Arial, sans-serif; /* 'Lucida Grande', Verdana, Arial, Sans-Serif; */
 
 /* debug */
 @mixin debug-bgcolor($color) {
@@ -24,12 +24,6 @@ body {
 
     #site {
 	@include debug-bgcolor(#11FF11);
-	width: 75%;
-	margin: 20px auto;
-	padding: {
-	    left: 20px;
-	    right: 20px;
-	}
 
 	#titlebar {
 	    margin-bottom: 25px;
@@ -75,12 +69,13 @@ body {
 body {
     font-family: $font-stack-sansserif;
     color: $main-text-color;
+    line-height: 1.0;
+
 }
 
 p {
     text-align: justify;
     margin-bottom: 20px;
-    line-height: 1.5em;
 }
 
 em {
