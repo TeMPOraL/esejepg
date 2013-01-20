@@ -79,3 +79,4 @@
 
 * DONE robots.txt
 
+* TODO Make <em> tag stronger (more visible italics)?
