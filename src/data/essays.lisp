@@ -1,3 +1,9 @@
+;;; Authors
+(defconstant +temporal+ "Jacek Złydach")
+(defconstant +aajnno+ "Joanna Kmiecik")
+
+;;; Essays
+
 (defessay :progbot
     :title "Programowanie metodą wstępującą (ang. bottom-up)"
     :url "/eseje/progbot.html"
@@ -5,7 +11,7 @@
     :orig-url "http://paulgraham.com/progbot.html"
     :date "???"
     :orig-date "1993"
-    :translators '(:temporal)
+    :translators `(,+temporal+)
     :disabled t
     :description "W trakcie przekładu.")
 
