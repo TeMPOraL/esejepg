@@ -13,6 +13,33 @@
   - [ ] headers (in essay)
   - [ ] <em> as italics
   - [ ] social buttons
+* TODO Smaller text font
+* TODO Make the pull-and-regenerate process triggerable from the web.
+  Just so that I won't have to connect to the server every time I want to edit a translation.
+
+* TODO App-side caching via HTML5/JS API
+  http://www.html5rocks.com/en/tutorials/appcache/beginner/
+* TODO Sign up for newsletter box
+  Just reminders about new essays.
+* TODO OpenGraph descriptions
+  - [X] Basic
+  - [ ] Image
+
+* TODO Ensure essays are readable on Instapaper, Pocket and whatever else people use.
+
+* TODO favicon.ico
+
+* TODO picture (for open graph)
+
+* TODO FB tags for page Insights (after 30+ likes)
+
+* TODO print CSS (and other media, as needed)
+
+* TODO Replace translator symbols with real names
+  (probably need to build a translator database in a new lisp file)
+
+* TODO Back to the top link
+
 * DONE Change location of .scss files to /src/
   (need to modify regeneration script)
 
@@ -26,9 +53,6 @@
 
 * DONE humans.txt
 
-* TODO Make the pull-and-regenerate process triggerable from the web.
-  Just so that I won't have to connect to the server every time I want to edit a translation.
-
 * DONE Sitemap generation
   http://www.sitemaps.org/protocol.html
   The simplest way would be to list all HTML files and use them to output a basic sitemap :).
@@ -38,10 +62,6 @@
 * DONE Wszystkie javascriptowe bajery :)
   W tym JS-powered paragraph links.
 
-* TODO App-side caching via HTML5/JS API
-  http://www.html5rocks.com/en/tutorials/appcache/beginner/
-* TODO Sign up for newsletter box
-  Just reminders about new essays.
 * DONE Social buttons for page
   - [X] Facebook Fanpage
   - [X] Twitter for following
@@ -55,23 +75,7 @@
   - [X] Google Plus
   - [X] Wykop
 
-* TODO OpenGraph descriptions
-  - [X] Basic
-  - [ ] Image
-
 * DONE Meta Descriptions for pages
-
-* TODO Ensure essays are readable on Instapaper, Pocket and whatever else people use.
 
 * DONE robots.txt
 
-* TODO favicon.ico
-
-* TODO picture (for open graph)
-
-* TODO FB tags for page Insights (after 30+ likes)
-
-* TODO print CSS (and other media, as needed)
-
-* TODO Replace translator symbols with real names
-  (probably need to build a translator database in a new lisp file)
