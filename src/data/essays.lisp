@@ -86,10 +86,10 @@
     :orig-title "What You'll Wish You'd Known"
     :orig-url "http://paulgraham.com/hs.html"
     :orig-date "Styczeń 2005"
-    :alt-translations '(("http://T1" "T1") ("http://T2" "T2") ("http://T3" "T3"))
+;    :alt-translations '(("http://T1" "T1") ("http://T2" "T2") ("http://T3" "T3"))
     :translators '(:aajnno)
     :editors '(:temporal)
-    :description "TEST")
+    :description "Przemówienie dla licealistów na temat tego, co czeka ich w dorosłym życiu i jak najlepiej już teraz mogą wykorzystać swój czas.")
 
 ;; How to Start a Startup
 
