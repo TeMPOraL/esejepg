@@ -1,0 +1,110 @@
+<% @include ../templates/common/standard-essay.html %>
+<% (essay :id :progbot) %>
+
+<p id="p1"><em>(Ten esej pochodzi ze wstępu do <a href="http://paulgraham.com/onlisp.html">"On Lisp"</a>. Czerwony tekst tłumaczy
+pochodzenie nazwy języka <a href="http://paulgraham.com/arc.html">Arc</a>.)</em></p>
+
+<p id="p2">Jest to długoletnią zasadą stylu programowania, że elementy
+funkcjonalne programu nie powinny być zbyt duże. Jeśli jakiś fragment
+programu urośnie ponad etap, w którym jest łatwo zrozumiały, staje się
+masą złożoności, która ukrywa błędy tak łatwo, jak duże miasto ukrywa
+zbiegów. Takie oprogramowanie będzie ciężkie do czytania, ciężkie do
+testowania i ciężkie do debugowania.</p>
+
+<p id="p3">Zgodnie z tą zasadą, duży program musi być podzielony na części, a im
+większy on jest, tym bardziej musi być podzielony. Jak dzielić
+program? Tradycyjne podejście jest zwane <em>projektowaniem zstępującym:</em><a name="MT_TF1" href="#TF1" class="translator-footnote footnote-link">T1</a><span class="footnote translator"><a name="TF1" href="#MT_TF1" class="translator-footnote footnote-link">T1</a>ang. <em>top-down design</em>. <em>przypis tłumacza</em></span> mówisz, że "celem tego programu jest robienie
+tych siedmiu rzeczy; podzielę więc go na siedem głównych
+podprogramów. Pierwszy podprogram musi robić te cztery rzeczy, więc
+będzie miał swoje cztery podprogramy," i tak dalej. Ten proces trwa
+dopóki cały program nie osiągnie właściwego poziomu rozdrobnienia -
+każda część wystarczająco duża, by robić coś znacznego, ale na tyle
+mała, by dała się zrozumieć jako pojedyncza jednostka.</p>
+
+<p id="p4">Doświadczeni programiści Lispa dzielą swoje programy inaczej. Obok
+projektowania zstępującego, podążają też za zasadą, którą można by
+nazwać <em>projektowaniem wstępującym</em><a name="MT_TF2" href="#TF2" class="translator-footnote footnote-link">T2</a><span class="footnote translator"><a name="TF2" href="#MT_TF2" class="translator-footnote footnote-link">T2</a>ang. <em>bottom-up design</em>. <em>przypis tłumacza</em></span> - zmianą języka tak, by dopasować go do problemu. W
+Lispie nie tylko piszesz swój program w dół w kierunku języka, ale
+także budujesz język w kierunku programu. Pisząc program możesz sobie
+pomyśleć, "chciałbym, żeby Lisp miał taki-a-taki operator". Więc
+idziesz i go piszesz. Potem uświadamiasz sobie, że ten nowy operator
+może uprościć projekt innej części programu, i tak dalej. Język i
+program ewoluują razem. Jak granica między dwoma walczącymi państwami,
+tak i granica między językiem a programem jest rysowana i
+przerysowywana, aż w końcu spocznie wzdłuż gór i rzek, naturalnych
+brzegów Twojego problemu. Na końcu Twój program będzie wyglądał jakby
+język programowania był zaprojektowany pod jego potrzeby. A kiedy
+język i program pasują do siebie jak ulał, otrzymujesz kod, który jest
+czysty, mały i wydajny.</p>
+
+<p id="p5" style="color:red">Warto podkreślić, że projektowanie wstępujące nie oznacza pisania tego
+samego programu w innej kolejności. Kiedy pracujesz wstępująco, zwykle
+kończysz z innym programem. Zamiast pojedynczego, monolitycznego
+programu otrzymasz większy język, z bardziej abstrakcyjnymi
+operatorami, i mniejszy program w nim napisany. Zamiast nadproża
+otrzymasz łuk.</p>
+
+<p id="p6">W typowym kodzie, kiedy już wyabstrachujesz części robiące za
+księgowość, to co pozostanie jest dużo krótsze; im wyżej zbudujesz
+swój język, tym mniejszą odległość w dół będziesz musiał do niego
+pokonać. To przynosi kilka korzyści:
+
+1. Sprawiając, by język wykonywał więcej pracy, projektowanie
+wstępujące tworzy programy, które są mniejsze i bardziej
+zwinne. Mniejszy program nie musi być dzielony na tak wiele
+komponentów, a mniej części składowych oznacza programy, które są
+łatwiejsze w czytaniu i modyfikacji. Mniej komponentów oznacza także
+mniej połączeń między nimi, a przez to mniejszą szansę na błędy w
+nich. Tak jak projektanci przemysłowi dążą do zmniejszenia ilości
+ruchomych części w maszynie, tak doświadczeni programiści Lispu
+używają projektowania wstępującego by zmniejszyć rozmiar i złożoność
+ich programów.
+
+2. Projektowanie wstępujące sprzyja ponownemu wykorzystaniu
+kodu. Kiedy piszesz dwa lub więcej programy, wiele narzędzi, które
+napisałeś dla pierwszego będą przydatne w kolejnych. Kiedy już
+zbierzesz sobie duże podłoże narzędzi, pisanie nowego programu
+zajmie tylko ułamek wysiłku, który byłby potrzebny gdyby zaczynać z
+czystym Lispem.
+
+3. Projektowanie wstępujące czyni program łatwiejszym w
+czytaniu. Pojedynczy przypadek takiego typu abstrakcji prosi
+czytelnika, by zrozumiał jakiś operator ogólnego przeznaczenia;
+pojedynczy przypadek abstrakcji funkcjonalnej prosi czytelnika, by
+zrozumiał podprogram specjalnego przeznaczenia. <a name="MT_F1" href="#F1" class="footnote-link">1</a>.
+<span class="footnote"><a name="F1" href="#MT_F1" class="footnote-link">1</a> "Ale teraz nikt nie potrafi czytać programu bez zrozumienia
+wszystkich Twoich nowych narzędzi." Aby zrozumieć dlaczego takie
+stwierdzenia są zwykle błędne, zobacz Sekcję 4.8.</span>
+
+4. Ponieważ powoduje, że ciągle poszukujesz wzorców w swoim kodzie,
+praca wstępująca pomaga wyklarować Twoje pomysły co do projektu
+programu. Jeśli dwa odległe od siebie komponenty programu są
+podobne w swej formie, zostaniesz poprowadzony do zauważenia tego
+podobieństwa i być może do przeprojektowania programu na prostszy.
+</p>
+
+<p id="p7">Projektowanie wstępujące jest możliwe do pewnego stopnia w
+językach innych niż Lisp. Kiedy widzisz funkcje biblioteczne, masz do
+czynienia z programowaniem wstępującym. Lisp daje Ci dużo większą moc
+w tym dziale, a ulepszanie języka odgrywa proporcjonalnie większą rolę
+w stylu Lispu - do takiego stopnia, że Lisp nie jest po prostu
+odmiennym językiem, ale kompletnie innym sposobem programowania.</p>
+
+<p id="p8">Prawdą jest, że ten styl tworzenia pasuje bardziej do programów, które
+mogą być pisane w mniejszych grupach. Jednakże, równocześnie,
+rozszerza on granice tego, co może być dokonane w małych grupach. W
+książce <em>"Mityczny Osobomiesiąc"</em> Frederick Brooks zaproponował, że
+produktywność grupy programistów nie rośnie liniowo z jej
+rozmiarem. Wraz ze wzrostem rozmiaru grupy, produktywność pojedynczych
+programistów spada. Doświadczenie programowania w Lispie pozwala na
+bardziej radosne przedstawienie tego prawa: wraz ze zmniejszaniem się
+rozmiaru grupy, produktywność pojedynczych programistów rośnie. Mała
+grupa wygrywa, mówiąc względnie, po prostu dlatego, że jest
+mała (mniejsza). Jeśli mała grupa potrafi także skorzystać z technik, które
+umożliwia Lisp, może ona <a href="http://paulgraham.com/avg.html">po prostu zwyciężyć</a>.</p>
+
+[1] - 
+
+<ul>
+  <li><strong>Nowość</strong>: <a href="http://paulgraham.com/onlisptext.html">Pobierz "On Lisp" za darmo</a>.</li>
+</ul>
