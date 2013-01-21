@@ -361,6 +361,7 @@
     :orig-url "http://paulgraham.com/hw.html"
     :orig-date "Październik 2012"
     :translators '(:temporal)
-    :editors '(:aajnno))
+    :editors '(:aajnno)
+    :description "Coraz więcej startupów zaczyna zajmować się sprzętem. Czy jest to oznaka nadchodzącej zmiany?")
 
 ;; How to Get Startup Ideas
