@@ -4,7 +4,7 @@
   <h1 class="essay-title"><%= title %></h1>
   
   <span class="essay-original-title">Oryginał: <a href="<%= orig-url %>"><%= orig-title %></a><%(if orig-date (progn %>, <%= orig-date %> <% )) %><br /></span>
-  <% (if translators (progn %><span class="essay-translators">Tłumaczenie: <%= (format nil "~{~A~^, ~}~%" translators) %><% (if date (progn %><span class="essay-creation-date">, <%= date %></span><% )) %><br /></span><% )) %>
+  <% (if translators (progn %><span class="essay-translators">Tłumaczenie:<%= (format nil "~{ ~A~^,~}~%" translators) %><% (if date (progn %><span class="essay-creation-date">, <%= date %></span><% )) %><br /></span><% )) %>
 
   <% (if editors (progn %><span class="essay-editors">Korekta: <%= (format nil "~{~A~^, ~}~%" editors) %><br /></span><% )) %>
 
