@@ -1,7 +1,7 @@
 ;;; translation staff
 
-(defconstant ,+temporal+ "Jacek \"TeMPOraL\" Złydach")
-(defconstant ,+aajnno+ "Joanna Kmiecik")
+(defconstant +temporal+ "Jacek \"TeMPOraL\" Złydach")
+(defconstant +aajnno+ "Joanna Kmiecik")
 
 ;;; essays
 
