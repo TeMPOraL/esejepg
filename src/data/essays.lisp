@@ -1,3 +1,10 @@
+;;; translation staff
+
+(defconstant ,+temporal+ "Jacek \"TeMPOraL\" Złydach")
+(defconstant ,+aajnno+ "Joanna Kmiecik")
+
+;;; essays
+
 (defessay :progbot
     :title "Programowanie metodą wstępującą (ang. bottom-up)"
     :url "/eseje/progbot.html"
@@ -5,8 +12,8 @@
     :orig-url "http://paulgraham.com/progbot.html"
     :date "Styczeń 2013"
     :orig-date "1993"
-    :translators '(:temporal)
-    :editors '(:aajnno)
+    :translators `(,+temporal+)
+    :editors `(,+aajnno+)
     :description "O całkowicie odmiennym spojrzeniu na projektowanie i pisanie oprogramowania, jakie oferuje nam Lisp.")
 
 ;; Chapter 2 of Ansi Common Lisp
@@ -17,7 +24,7 @@
 
 ;; Beating the Averages
 
-;; Java's Cover
+;; Java`s Cover
 
 ;; Being Popular
 
@@ -29,7 +36,7 @@
 
 ;; What Made Lisp Different
 
-;; Why Arc Isn't Especially Object-Oriented
+;; Why Arc Isn`t Especially Object-Oriented
 
 ;; Taste for Makers
 
@@ -39,8 +46,8 @@
     :orig-title "What Languages Fix"
     :orig-url "http://paulgraham.com/fix.html"
     :date "Styczeń 2013"
-    :translators '(:temporal)
-    :editors '(:aajnno)
+    :translators `(,+temporal+)
+    :editors `(,+aajnno+)
     :description "Tylko częściowo humorystyczne, jednozdaniowe podsumowania znanych języków programowania.")
 
 ;; Succinctness is Power
@@ -63,7 +70,7 @@
 
 ;; Filters that Fight Back
 
-;; What You Can't Say
+;; What You Can`t Say
 
 ;; The Word "Hacker"
 
@@ -81,9 +88,9 @@
 
 ;; A Version 1.0
 
-;; Bradley's Ghost
+;; Bradley`s Ghost
 
-;; It's Charisma, Stupid
+;; It`s Charisma, Stupid
 
 ;; Made in USA
 
@@ -91,12 +98,12 @@
     :title "Co będziecie chcieli, żeby ktoś był powiedział Wam wcześniej"
     :url "/eseje/hs.html"
     :date "Styczeń 2013"
-    :orig-title "What You'll Wish You'd Known"
+    :orig-title "What You`ll Wish You`d Known"
     :orig-url "http://paulgraham.com/hs.html"
     :orig-date "Styczeń 2005"
-;    :alt-translations '(("http://T1" "T1") ("http://T2" "T2") ("http://T3" "T3"))
-    :translators '(:aajnno)
-    :editors '(:temporal)
+;    :alt-translations `(("http://T1" "T1") ("http://T2" "T2") ("http://T3" "T3"))
+    :translators `(,+aajnno+)
+    :editors `(,+temporal+)
     :description "Przemówienie dla licealistów na temat tego, co czeka ich w dorosłym życiu i jak najlepiej już teraz mogą wykorzystać swój czas.")
 
 ;; How to Start a Startup
@@ -112,7 +119,7 @@
     :orig-title "Writing, Briefly"
     :orig-url "http://paulgraham.com/writing44.html"
     :orig-date "Marzec 2005"
-    :translators '(:aajnno :temporal)
+    :translators `(,+aajnno+ ,+temporal+)
     :description "Wysoce skondensowany poradnik pisania esejów. Esencja pisarstwa w kilku zdaniach.")
 
 ;; Return of the Mac
@@ -165,7 +172,7 @@
 
 ;; How to Present to Investors
 
-;; A Student's Guide to Startups
+;; A Student`s Guide to Startups
 
 ;; The 18 Mistakes That Kill Startups
 
@@ -186,11 +193,11 @@
     :orig-title "Two Kinds of Judgement"
     :orig-url "http://paulgraham.com/judgement.html"
     :orig-date "Kwiecien 2007"
-    :translators '(:aajnno)
-    :editors '(:temporal)
+    :translators `(,+aajnno+)
+    :editors `(,+temporal+)
     :description "Dlaczego nie każdą ocenę należy odbierać osobiście, i jak odróżnić od siebie dwa rodzaje osądu?")
 
-;; The Hacker's Guide to Investors
+;; The Hacker`s Guide to Investors
 
 ;; An Alternative Theory of Unions
 
@@ -198,7 +205,7 @@
 
 ;; Stuff
 
-;; Holding a Program in One's Head
+;; Holding a Program in One`s Head
 
 ;; How Not to Die
 
@@ -216,13 +223,13 @@
 
 ;; A New Venture Animal
 
-;; You Weren't Meant to Have a Boss
+;; You Weren`t Meant to Have a Boss
 
 ;; How to Disagree
 
 ;; Some Heroes
 
-;; Why There Aren't More Googles
+;; Why There Aren`t More Googles
 
 ;; Be Good
 
@@ -250,7 +257,7 @@
 
 ;; Startups in 13 Sentences
 
-;; What I've Learned from Hacker News
+;; What I`ve Learned from Hacker News
 
 ;; Can You Buy a Silicon Valley? Maybe.
 
@@ -266,16 +273,16 @@
 
 ;; A Local Revolution?
 
-;; Maker's Schedule, Manager's Schedule 
+;; Maker`s Schedule, Manager`s Schedule 
 (defessay :makersschedule
     :title "Harmonogram twórcy, harmonogram menadżera"
     :url "/eseje/makersschedule.html"
     :date "Styczeń 2013"
-    :orig-title "Maker's Schedule, Manager's Schedule"
+    :orig-title "Maker`s Schedule, Manager`s Schedule"
     :orig-url "http://paulgraham.com/makersschedule.html"
     :orig-date "Lipiec 2009"
-    :translators '(:aajnno)
-    :editors '(:temporal)
+    :translators `(,+aajnno+)
+    :editors `(,+temporal+)
     :description "Dlaczego programiści i menadżerowie tak często nie potrafią się dogadać ze sobą?")
 
 ;; Ramen Profitable
@@ -294,7 +301,7 @@
 
 ;; What Startups Are Really Like
 
-;; Apple's Mistake
+;; Apple`s Mistake
 
 ;; Organic Startup Ideas
 
@@ -345,8 +352,8 @@
     :orig-title "The Top of My Todo List"
     :orig-url "http://paulgraham.com/todo.html"
     :orig-date "Kwiecień 2012"
-    :translators '(:aajnno)
-    :editors '(:temporal)
+    :translators `(,+aajnno+)
+    :editors `(,+temporal+)
     :description "O czym warto pamiętać cały czas, niezależnie co się w danej chwili robi.")
 
 ;; Black Swan Farming
@@ -360,8 +367,8 @@
     :orig-title "The Hardware Renaissance"
     :orig-url "http://paulgraham.com/hw.html"
     :orig-date "Październik 2012"
-    :translators '(:temporal)
-    :editors '(:aajnno)
+    :translators `(,+temporal+)
+    :editors `(,+aajnno+)
     :description "Coraz więcej startupów zaczyna zajmować się sprzętem. Czy jest to oznaka nadchodzącej zmiany?")
 
 ;; How to Get Startup Ideas
