@@ -78,5 +78,3 @@
 * DONE Meta Descriptions for pages
 
 * DONE robots.txt
-
-* TODO Make <em> tag stronger (more visible italics)?
