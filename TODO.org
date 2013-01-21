@@ -17,6 +17,13 @@
 
 * TODO Ensure essays are readable on Instapaper, Pocket and whatever else people use.
 
+  - progbot.html - Pocket seems to not like sidenotes - it either
+    merges them into text, hides them, or kills a a whole paragraphw
+    that contains them. TODO investigate.
+
+  - progbot.html - MagicScroll removes all sidenotes, but leaves main
+    text readable.
+
 * TODO favicon.ico
 
 * TODO picture (for open graph)
@@ -29,7 +36,7 @@
 
 
 * TODO Eliminate Lisp warnings about redefining constants.
-
+  
 * DONE Styling
   - [X] proper vertical spacing (line, paragraphs)
   - [X] proper paragraph alignment
