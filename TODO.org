@@ -2,18 +2,8 @@
 #+startup: hidestars
 
 
-* TODO Styling
-  - [ ] proper vertical spacing (line, paragraphs)
-  - [ ] proper paragraph alignment
-  - [ ] column for footnotes
-  - [ ] footnotes and translation footnotes
-  - [ ] text size
-  - [ ] footnotes
-  - [ ] general visual styling
-  - [ ] headers (in essay)
-  - [ ] <em> as italics
-  - [ ] social buttons
-* DONE Smaller text font
+* TODO Make main page look not ugly
+
 * TODO Make the pull-and-regenerate process triggerable from the web.
   Just so that I won't have to connect to the server every time I want to edit a translation.
 
@@ -35,10 +25,23 @@
 
 * TODO print CSS (and other media, as needed)
 
-* TODO Replace translator symbols with real names
-  (probably need to build a translator database in a new lisp file)
-
 * TODO Back to the top link
+
+* DONE Styling
+  - [X] proper vertical spacing (line, paragraphs)
+  - [X] proper paragraph alignment
+  - [X] column for footnotes
+  - [X] footnotes and translation footnotes
+  - [X] text size
+  - [X] footnotes
+  - [X] general visual styling
+  - [X] headers (in essay)
+  - [X] <em> as italics
+  - [X] social buttons
+
+* DONE Smaller text font
+* DONE Replace translator symbols with real names
+  (probably need to build a translator database in a new lisp file)
 
 * DONE Change location of .scss files to /src/
   (need to modify regeneration script)
