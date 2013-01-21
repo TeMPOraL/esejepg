@@ -27,6 +27,9 @@
 
 * TODO Back to the top link
 
+
+* TODO Eliminate Lisp warnings about redefining constants.
+
 * DONE Styling
   - [X] proper vertical spacing (line, paragraphs)
   - [X] proper paragraph alignment
