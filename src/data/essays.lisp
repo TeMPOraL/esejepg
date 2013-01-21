@@ -346,7 +346,8 @@
     :orig-url "http://paulgraham.com/todo.html"
     :orig-date "Kwiecień 2012"
     :translators '(:aajnno)
-    :editors '(:temporal))
+    :editors '(:temporal)
+    :description "O czym warto pamiętać cały czas, niezależnie co się w danej chwili robi.")
 
 ;; Black Swan Farming
 
