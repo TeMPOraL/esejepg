@@ -1,7 +1,8 @@
 ;;; translation staff
 
-(defconstant +temporal+ "Jacek \"TeMPOraL\" Złydach")
-(defconstant +aajnno+ "Joanna Kmiecik")
+(ignore-errors                          ; silly constant redefinition errors fire up interactive debugger all the time ;)
+  (defconstant +temporal+ "Jacek \"TeMPOraL\" Złydach")
+  (defconstant +aajnno+ "Joanna Kmiecik"))
 
 ;;; essays
 
@@ -104,7 +105,7 @@
 ;    :alt-translations `(("http://T1" "T1") ("http://T2" "T2") ("http://T3" "T3"))
     :translators `(,+aajnno+)
     :editors `(,+temporal+)
-    :description "Przemówienie dla licealistów na temat tego, co czeka ich w dorosłym życiu i jak najlepiej już teraz mogą wykorzystać swój czas.")
+    :description "Przemówienie dla licealistów na temat tego, co czeka ich w dorosłym życiu i jak już teraz mogą zacząć wykorzystywać swój czas najlepiej.")
 
 ;; How to Start a Startup
 
@@ -283,7 +284,7 @@
     :orig-date "Lipiec 2009"
     :translators `(,+aajnno+)
     :editors `(,+temporal+)
-    :description "Dlaczego programiści i menadżerowie tak często nie potrafią się dogadać ze sobą?")
+    :description "Dlaczego programiści i menadżerowie tak często nie potrafią dogadać się ze sobą?")
 
 ;; Ramen Profitable
 
