@@ -37,9 +37,7 @@ body {
 	    
 	    h1 {
 		font-size: 2.2em;
-		.title_a { color: #808080; }
-		.title_b { color: orange; }
-		.title_c { color: #808080; }
+		margin-bottom: 5px;
 	    }
 
 	    h2 {
@@ -139,7 +137,6 @@ ol {
     }
 }
 
-ul, ol {
-    padding: 0;
-    margin: 0 0 10px 25px;
-}
+.title_a { color: #808080; }
+.title_b { color: orange; }
+.title_c { color: #808080; }
