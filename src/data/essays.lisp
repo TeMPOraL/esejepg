@@ -147,7 +147,16 @@
 
 ;; Web 2.0
 
-;; Good and Bad Procrastination
+(defessay :procrastination
+    :title "Dobra i zła prokrastynacja"
+    :url "/eseje/procrastination.html"
+    :date "Styczeń 2013"
+    :orig-title "Good and Bad Procrastination"
+    :orig-url "http://paulgraham.com/procrastination.html"
+    :orig-date "Grudzień 2005"
+    :translators `(,+aajnno+)
+    :editors `(,+temporal+)
+    :description "TODO")
 
 ;; How to Do What You Love
 
