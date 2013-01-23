@@ -2,8 +2,6 @@
 #+startup: hidestars
 
 
-* TODO Make main page look not ugly
-
 * TODO Make the pull-and-regenerate process triggerable from the web.
   Just so that I won't have to connect to the server every time I want to edit a translation.
 
@@ -35,7 +33,10 @@
 * TODO Back to the top link
 
 
-* TODO Eliminate Lisp warnings about redefining constants.
+* DONE Make main page look not ugly
+  Not tragic. Not perfect yet though.
+
+* DONE Eliminate Lisp warnings about redefining constants.
   
 * DONE Styling
   - [X] proper vertical spacing (line, paragraphs)
