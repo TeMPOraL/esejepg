@@ -156,7 +156,7 @@
     :orig-date "Grudzień 2005"
     :translators `(,+aajnno+)
     :editors `(,+temporal+)
-    :description "TODO")
+    :description "Czy każda prokrastynacja jest zła? Jak odwlekać zadania i pozostać produktywnym?")
 
 ;; How to Do What You Love
 
