@@ -98,7 +98,7 @@ oldest."
   "Generate CSS file from SASS files."
   (let* ((name (namestring pathname))
          (css-name (make-css-file-name name))
-         (command (format nil "/home/temporal/lib/sass/bin/sass --style expanded ~A:~A" name css-name)))
+         (command (format nil "`which sass` --style expanded ~A:~A" name css-name)))
     (ensure-directories-exist css-name)
     (format t "Running command: ~A~%" command)
     #+LINUX(unless (= 0 (asdf:run-shell-command command))
