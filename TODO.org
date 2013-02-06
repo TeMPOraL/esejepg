@@ -1,10 +1,16 @@
 #+title: TODO
 #+startup: hidestars
 
+
+* TODO Move from load to require
+  Define ASDF systems for data and generation system.
+  It will protect form const redefinition.
+
 * TODO Fix template generation
-** TODO Remove function definition at template
+** TODO Update generation function to new layout of sites
+** DONE Remove function definition at template
    Form
-*** TODO standard-essay.html
+*** DONE standard-essay.html
 	vairable use in function (need to me transform into template
 	  + title
 	  + orig-title
@@ -32,16 +38,16 @@
 	+ part-of-hnp
 	+ description
 
-** TODO Remove *current-essay* description form template in advice to essay item (form env)
-   file affected : 
-   
+*** DONE Remove *current-essay* description form template in advice to essay item (form env)
+   	file affected : 
+   	
 *** DONE essay-list-entry.html
 *** TODO essay-datailed-entry.html
 
-** TODO remove @var with content to render partial mechanizm
-   File affected
-   + eseje.html
-   + strony.htmm
+*** DONE remove @var with content to render partial mechanizm
+   	File affected
+   	+ eseje.html
+   	+ strony.htmm
 
 
 * TODO Make the pull-and-regenerate process triggerable from the web.

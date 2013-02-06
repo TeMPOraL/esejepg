@@ -1,5 +1,23 @@
 ;;; translation staff
 
+;; Some default stuff
+(defconstant +default-properties+ '(:title nil :url nil :orig-title nil :orig-url nil :date nil :orig-date nil :alt-translations nil :translators nil :editors nil :disabled nil :additional-html nil :part-of-hnp nil :description ""))
+
+;;; Data processing code
+;;; Used for being able to refer to essays declaratively.
+(defun defessay (essay-id &rest properties)
+  "Defines an essay by putting it's data into global *environment* variable, which will be an environment for
+EMB templates. Please define essays from oldest to newest, to ensure proper order when iterating (from newest to
+oldest."
+  (append (list :id (string essay-id))  properties +default-properties+))
+n
+(defun create-translators (&rest translators)
+  (map 'list #'(lambda (person) (list :translator person)) translators))
+
+(defun create-editors (&rest editors)
+  (map 'list #'(lambda (person) (list :editor person)) editors))
+
+
 (defparameter *essays*
   (let (( +temporal+ "Jacek \"TeMPOraL\" Złydach")
 		( +aajnno+ "Joanna Kmiecik"))
@@ -384,3 +402,8 @@
 	 ;; How to Get Startup Ideas
 
 	 )))
+
+(defparameter *essays-ids* (mapcar #'(lambda (essay) (getf essay :id)) *essays*))
+
+(defun find-essay-by-id (id)
+  (find-if #'(lambda (essay) (string= id (getf essay :id))) *essays*))

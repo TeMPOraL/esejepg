@@ -5,33 +5,18 @@
 (ql:quickload "cl-ppcre")
 
 ;;; Stuff required for EMB templates.
-(defparameter *configuration* '() "plist containing config parameters passed to EMB templates.")
-(defconstant +default-properties+ '(:title nil :url nil :orig-title nil :orig-url nil :date nil :orig-date nil :alt-translations nil :translators nil :editors nil :disabled nil :additional-html nil :part-of-hnp nil :description ""))
 (defconstant +sitemap-name+ "site/sitemap.xml" "Sitemap name (with location).")
 (defconstant +root-url+ "http://esejepg.pl/" "Root URL of the web page.")
 
-
-;;; Data processing code
-;;; Used for being able to refer to essays declaratively.
-(defun defessay (essay-id &rest properties)
-  "Defines an essay by putting it's data into global *environment* variable, which will be an environment for
-EMB templates. Please define essays from oldest to newest, to ensure proper order when iterating (from newest to
-oldest."
-  (append (list :id (string essay-id))  properties +default-properties+))
-
-(defun create-translators (&rest translators)
-  (map 'list #'(lambda (person) (list :translator person)) translators))
-
-(defun create-editors (&rest editors)
-  (map 'list #'(lambda (person) (list :editor person)) editors))
-
-(load "src/data/essays.lisp")
-
 ;;; Regeneration code
 
-(defun make-environment ()
-  (append (list :conf *configuration*) (list :essays *essays*)))
-
+(defparameter file-to-regenerate 
+  (list 
+   (cons "templates/index.html"  "site/index.html")
+   (cons "templates/o-stronie.html" "site/o-stronie.html")
+   (cons "templates/pg.html" "site/pomoz-z-tlumaczeniem.html")
+   (cons "templates/pg.html" "pytania.html")))
+   
 (defun template-to-generate-file-from-p (path)
   "Returns t if given file should generate a corresponding HTML in source."
   (not (or (search "templates/" (namestring path))
@@ -72,7 +57,7 @@ oldest."
   (with-open-file (stream pathname :direction :output
                           :if-exists :supersede
                           :if-does-not-exist :create)
-    (format stream content)))
+    (print content stream)))
 
 (defun generate-file (pathname)
   "Generate HTML from selected template."
@@ -163,12 +148,9 @@ oldest."
   (format t "Deleting old files...~%")
   (delete-old-files)
 
-  (format t "Cleaning template environment...~%")
-  (setf *essays* '())
-
   (format t "Loading essay data...~%")
   (load "src/data/essays.lisp")
-  (format t "Loaded ~A essay descriptors.~%" (/ (length *essays*) 2))
+  (format t "Loaded ~A essay descriptors.~%" (length *essays*))
 
   (format t "Regenerating static HTML files...~%")
   (fad:walk-directory "src" 'generate-file :test 'template-to-generate-file-from-p)
