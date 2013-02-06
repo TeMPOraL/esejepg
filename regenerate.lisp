@@ -19,7 +19,7 @@
   "Defines an essay by putting it's data into global *environment* variable, which will be an environment for
 EMB templates. Please define essays from oldest to newest, to ensure proper order when iterating (from newest to
 oldest."
-  (list essay-id (append  properties +default-properties+)))
+  (append (list :id essay-id)  properties +default-properties+))
 
 (defun create-translators (&rest translators)
   (map 'list #'(lambda (person) (list :translator person)) translators))

@@ -1,12 +1,12 @@
 <% (defparameter title "Eseje Paula Grahama w języku polskim") %>
 <% (defparameter description "Eseje Paula Grahama w języku polskim.") %>
-<% @include ../templates/common/standard-essay-item.html %>
 
 <div id="essay-list">
   <h1>Przetłumaczone eseje</h1>
 
   <ul>
-    <%# thank you, Theerasak Photha (http://www.thelinuxlink.net/pipermail/lvlug/2007-January/017213.html), for this looping construct #%>
-    <% (loop for (key descr) on (getf env :essays) by #'cddr do (progn %><li><% (essay :id key)) %></li><% )) %> <%# progn, loop #%>
+	<% @loop essays %>
+    <% @incude "../templates/common/essay-list-entry.html" %>
+	<% @endloop %>
   </ul>
 </div>
