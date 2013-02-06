@@ -1,6 +1,47 @@
 #+title: TODO
 #+startup: hidestars
 
+* TODO Fix template generation
+** TODO Remove function definition at template
+   Form
+*** TODO standard-essay.html
+	vairable use in function (need to me transform into template
+	  + title
+	  + orig-title
+	  + orig-date
+	  + translators
+	  + date
+	  + editors
+	  + alt-translations
+	  + part-of-hpn
+
+*** TODO standard-essay-item.html
+	variable use in function (need to move as template)
+	+ disabled
+	+ title
+	+ url
+	+ orig-title
+	+ orig-url
+	+ date
+	+ orig-date
+	+ alt-translations
+	+ additional-html
+	+ translators
+	+ editors
+	+ disabled
+	+ part-of-hnp
+	+ description
+
+** TODO Remove *current-essay* description form template in advice to essay item (form env)
+   file affected : 
+   + essay-list-entry.html
+   + essay-datailed-entry.html
+
+** TODO remove @var with content to render partial mechanizm
+   File affected
+   + eseje.html
+   + strony.htmm
+
 
 * TODO Make the pull-and-regenerate process triggerable from the web.
   Just so that I won't have to connect to the server every time I want to edit a translation.
