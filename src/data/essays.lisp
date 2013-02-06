@@ -13,8 +13,8 @@
 		 :orig-url "http://paulgraham.com/progbot.html"
 		 :date "Styczeń 2013"
 		 :orig-date "1993"
-		 :translators `(,+temporal+)
-		 :editors `(,+aajnno+)
+		 :translators (create-translators +temporal+)
+		 :editors (create-editors +aajnno+)
 		 :description "O całkowicie odmiennym spojrzeniu na projektowanie i pisanie oprogramowania, jakie oferuje nam Lisp.")
 
 	 ;; Chapter 2 of Ansi Common Lisp
@@ -47,8 +47,8 @@
 		 :orig-title "What Languages Fix"
 		 :orig-url "http://paulgraham.com/fix.html"
 		 :date "Styczeń 2013"
-		 :translators `(,+temporal+)
-		 :editors `(,+aajnno+)
+		 :translators (create-translators +temporal+)
+		 :editors (create-editors +aajnno+)
 		 :description "Tylko częściowo humorystyczne, jednozdaniowe podsumowania znanych języków programowania.")
 
 	 ;; Succinctness is Power
@@ -103,8 +103,8 @@
 		 :orig-url "http://paulgraham.com/hs.html"
 		 :orig-date "Styczeń 2005"
 										;    :alt-translations `(("http://T1" "T1") ("http://T2" "T2") ("http://T3" "T3"))
-		 :translators `(,+aajnno+)
-		 :editors `(,+temporal+)
+		 :translators (create-translators +aajnno+)
+		 :editors (create-editors +temporal+)
 		 :description "Przemówienie dla licealistów na temat tego, co czeka ich w dorosłym życiu i jak już teraz mogą zacząć wykorzystywać swój czas najlepiej.")
 
 	 ;; How to Start a Startup
@@ -120,7 +120,7 @@
 		 :orig-title "Writing, Briefly"
 		 :orig-url "http://paulgraham.com/writing44.html"
 		 :orig-date "Marzec 2005"
-		 :translators `(,+aajnno+ ,+temporal+)
+		 :translators (create-translators +aajnno+ +temporal+)
 		 :description "Wysoce skondensowany poradnik pisania esejów. Esencja pisarstwa w kilku zdaniach.")
 
 	 ;; Return of the Mac
@@ -154,8 +154,8 @@
 		 :orig-title "Good and Bad Procrastination"
 		 :orig-url "http://paulgraham.com/procrastination.html"
 		 :orig-date "Grudzień 2005"
-		 :translators `(,+aajnno+)
-		 :editors `(,+temporal+)
+		 :translators (create-translators +aajnno+)
+		 :editors (create-editors +temporal+)
 		 :description "Czy każda prokrastynacja jest zła? Jak odwlekać zadania i pozostać produktywnym?")
 
 	 ;; How to Do What You Love
@@ -203,8 +203,8 @@
 		 :orig-title "Two Kinds of Judgement"
 		 :orig-url "http://paulgraham.com/judgement.html"
 		 :orig-date "Kwiecien 2007"
-		 :translators `(,+aajnno+)
-		 :editors `(,+temporal+)
+		 :translators (create-translators +aajnno+)
+		 :editors (create-editors +temporal+)
 		 :description "Dlaczego nie każdą ocenę należy odbierać osobiście, i jak odróżnić od siebie dwa rodzaje osądu?")
 
 	 ;; The Hacker`s Guide to Investors
@@ -291,8 +291,8 @@
 		 :orig-title "Maker`s Schedule, Manager`s Schedule"
 		 :orig-url "http://paulgraham.com/makersschedule.html"
 		 :orig-date "Lipiec 2009"
-		 :translators `(,+aajnno+)
-		 :editors `(,+temporal+)
+		 :translators  (create-translators +aajnno+)
+		 :editors (create-editors +temporal+)
 		 :description "Dlaczego programiści i menadżerowie tak często nie potrafią dogadać się ze sobą?")
 
 	 ;; Ramen Profitable
@@ -362,8 +362,8 @@
 		 :orig-title "The Top of My Todo List"
 		 :orig-url "http://paulgraham.com/todo.html"
 		 :orig-date "Kwiecień 2012"
-		 :translators `(,+aajnno+)
-		 :editors `(,+temporal+)
+		 :translators (create-translators +aajnno+)
+		 :editors (create-editors +temporal+)
 		 :description "O czym warto pamiętać cały czas, niezależnie co się w danej chwili robi.")
 
 	 ;; Black Swan Farming
@@ -377,8 +377,8 @@
 		 :orig-title "The Hardware Renaissance"
 		 :orig-url "http://paulgraham.com/hw.html"
 		 :orig-date "Październik 2012"
-		 :translators `(,+temporal+)
-		 :editors `(,+aajnno+)
+		 :translators (create-translators +temporal+)
+		 :editors (create-editors +aajnno+)
 		 :description "Coraz więcej startupów zaczyna zajmować się sprzętem. Czy jest to oznaka nadchodzącej zmiany?")
 
 	 ;; How to Get Startup Ideas

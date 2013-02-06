@@ -34,8 +34,9 @@
 
 ** TODO Remove *current-essay* description form template in advice to essay item (form env)
    file affected : 
-   + essay-list-entry.html
-   + essay-datailed-entry.html
+   
+*** TODO essay-list-entry.html
+*** TODO essay-datailed-entry.html
 
 ** TODO remove @var with content to render partial mechanizm
    File affected

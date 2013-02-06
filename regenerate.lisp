@@ -6,7 +6,6 @@
 
 ;;; Stuff required for EMB templates.
 (defparameter *configuration* '() "plist containing config parameters passed to EMB templates.")
-(load 'src/data/essays.lisp')
 (defconstant +default-properties+ '(:title nil :url nil :orig-title nil :orig-url nil :date nil :orig-date nil :alt-translations nil :translators nil :editors nil :disabled nil :additional-html nil :part-of-hnp nil :description ""))
 (defconstant +sitemap-name+ "site/sitemap.xml" "Sitemap name (with location).")
 (defconstant +root-url+ "http://esejepg.pl/" "Root URL of the web page.")
@@ -21,6 +20,14 @@
 EMB templates. Please define essays from oldest to newest, to ensure proper order when iterating (from newest to
 oldest."
   (list essay-id (append  properties +default-properties+)))
+
+(defun create-translators (&rest translators)
+  (map 'list #'(lambda (person) (list :translator person)) translators))
+
+(defun create-editors (&rest editors)
+  (map 'list #'(lambda (person) (list :editor person)) editors))
+
+(load "src/data/essays.lisp")
 
 ;;; Regeneration code
 
