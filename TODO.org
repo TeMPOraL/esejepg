@@ -15,7 +15,7 @@
 	  + alt-translations
 	  + part-of-hpn
 
-*** TODO standard-essay-item.html
+*** DONE standard-essay-item.html
 	variable use in function (need to move as template)
 	+ disabled
 	+ title

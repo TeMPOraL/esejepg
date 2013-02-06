@@ -3,10 +3,9 @@
 
 <div id="essay-list">
   <h1>Przetłumaczone eseje</h1>
-
   <ul>
 	<% @loop essays %>
-    <% @incude "../templates/common/essay-list-entry.html" %>
+	<% @include common/essay-list-entry.html %>
 	<% @endloop %>
   </ul>
 </div>

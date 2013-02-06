@@ -1,21 +1,21 @@
 <div class="essay-list-entry">
 
   <% @if disabled %>
-  <h2 class="essay-title disabled"><%= title %></h2>
+  <h2 class="essay-title disabled"><% @var title %></h2>
   <% @else %>
-  <h2 class="essay-title"><a href="<%= url %>"><%= title %></a></h2>
+  <h2 class="essay-title"><a href="<% @var url %>"><%= title %></a></h2>
   <% @endif %>
 
-  <span class="essay-original-title">Oryginał: <a href="<%= orig-url %>"><%= orig-title %></a>
+  <span class="essay-original-title">Oryginał: <a href="<% @var orig-url %>"><%= @var orig-title %></a>
 	<% @if orig-date %>
-	<%= orig-date %> 
+	<%= @var orig-date %> 
 	<% @endif %>
 	<br />
   </span>
 
   <% @if alt-translations %>
   <span class="alt-translations">Inne tłumaczenia:
-	<%= (format nil "~{~{<a href=\"~A\">~A</a>~}~^, ~}.~%" alt-translations) %></span><br />
+	<%= (format nil "~{~{<a href=\"~A\">~A</a>~}~^, ~}.~%" @var alt-translations) %></span><br />
   <% @endif %>
 
   <% @if part-of-hnp %>
@@ -23,11 +23,11 @@
   <% @endif %>
 n
   <% @if description %>
-  <span class="description"><%= description %></span><br />
+  <span class="description"><%= @var description %></span><br />
   <% @endif %>
 
   <% @if additional-html  %>
-  <span class="additional-html"><%= additional-html %></span><br />
+  <span class="additional-html"><%= @var additional-html %></span><br />
   <% @endif %>
 
 </div>
