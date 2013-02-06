@@ -9,8 +9,11 @@
   "Defines an essay by putting it's data into global *environment* variable, which will be an environment for
 EMB templates. Please define essays from oldest to newest, to ensure proper order when iterating (from newest to
 oldest."
-  (append (list :id (string essay-id))  properties +default-properties+))
-n
+  (append (list :id essay-id)
+		  properties
+		  (list :template (concatenate 'string "src/eseje/" essay-id ".html"))
+		  +default-properties+))
+
 (defun create-translators (&rest translators)
   (map 'list #'(lambda (person) (list :translator person)) translators))
 
@@ -24,7 +27,7 @@ n
 
 ;;; essays
 	(list 
-	 (defessay :progbot
+	 (defessay "progbot"
 		 :title "Programowanie metodą wstępującą (ang. bottom-up)"
 		 :url "/eseje/progbot.html"
 		 :orig-title "Programming Bottom-Up"
@@ -59,7 +62,7 @@ n
 
 	 ;; Taste for Makers
 
-	 (defessay :fix
+	 (defessay "fix"
 		 :title "Co rozwiązują języki"
 		 :url "/eseje/fix.html"
 		 :orig-title "What Languages Fix"
@@ -113,7 +116,7 @@ n
 
 	 ;; Made in USA
 
-	 (defessay :hs
+	 (defessay "hs"
 		 :title "Co będziecie chcieli, żeby ktoś był powiedział Wam wcześniej"
 		 :url "/eseje/hs.html"
 		 :date "Styczeń 2013"
@@ -131,7 +134,7 @@ n
 
 	 ;; Undergraduation
 
-	 (defessay :writing44
+	 (defessay "writing44"
 		 :title "O pisaniu, zwięźle"
 		 :url "/eseje/writing44.html"
 		 :date "Grudzień 2012"
@@ -165,7 +168,7 @@ n
 
 	 ;; Web 2.0
 
-	 (defessay :procrastination
+	 (defessay "procrastination"
 		 :title "Dobra i zła prokrastynacja"
 		 :url "/eseje/procrastination.html"
 		 :date "Styczeń 2013"
@@ -214,7 +217,7 @@ n
 
 	 ;; Microsoft is Dead
 
-	 (defessay :judgement
+	 (defessay "judgement"
 		 :title "Dwa rodzaje osądów"
 		 :url "/eseje/judgement.html"
 		 :date "Styczeń 2013"
@@ -302,7 +305,7 @@ n
 	 ;; A Local Revolution?
 
 	 ;; Maker`s Schedule, Manager`s Schedule 
-	 (defessay :makersschedule
+	 (defessay "makersschedule"
 		 :title "Harmonogram twórcy, harmonogram menadżera"
 		 :url "/eseje/makersschedule.html"
 		 :date "Styczeń 2013"
@@ -373,7 +376,7 @@ n
 
 	 ;; Writing and Speaking
 
-	 (defessay :todo
+	 (defessay "todo"
 		 :title "Szczyt mojej listy rzeczy do zrobienia"
 		 :url "/eseje/todo.html"
 		 :date "Styczeń 2013"
@@ -388,7 +391,7 @@ n
 
 	 ;; Startup = Growth
 
-	 (defessay :hw
+	 (defessay "hw"
 		 :title "Renesans Sprzętu"
 		 :url "/eseje/hw.html"
 		 :date "Styczeń 2013"
