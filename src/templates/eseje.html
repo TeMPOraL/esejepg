@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="generator" content="TRC ACLSSG - Advanced Common Lisp Static Site Generator" />
-    <meta name="description" content="<%= description %>" />
-    <title><%= title %> | esejepg.pl</title>
+    <meta name="description" content="<% @var description %>" />
+    <title><% @var title %> | esejepg.pl</title>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
@@ -17,9 +17,9 @@
     <link rel="stylesheet" href="/css/essay.css" type="text/css" />
 
     <!-- OpenGraph -->
-    <meta property="og:title" content="<%= title %>" />
+    <meta property="og:title" content="<% @var title %>" />
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="<%= description %>" />
+    <meta property="og:description" content="<% @var description %>" />
     <meta property="og:site_name" content="esejepg.pl" />
 
     <!-- google analytics -->
@@ -55,7 +55,7 @@
         <h2><a href="http://paulgraham.com/articles.html">Eseje Paula Grahama</a> przetłumaczone na język polski.</h2>
       </div>
       <div id="content">
-        <% @var content%>
+        <% @include essay_path %>
       </div>
 
       <div id="social">

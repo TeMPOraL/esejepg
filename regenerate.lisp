@@ -10,8 +10,6 @@
 (defconstant +sitemap-name+ "site/sitemap.xml" "Sitemap name (with location).")
 (defconstant +root-url+ "http://esejepg.pl/" "Root URL of the web page.")
 
-(defun make-environment ()
-  (append (list :conf *configuration*) (list :essays *essays*)))
 
 ;;; Data processing code
 ;;; Used for being able to refer to essays declaratively.
@@ -19,7 +17,7 @@
   "Defines an essay by putting it's data into global *environment* variable, which will be an environment for
 EMB templates. Please define essays from oldest to newest, to ensure proper order when iterating (from newest to
 oldest."
-  (append (list :id essay-id)  properties +default-properties+))
+  (append (list :id (string essay-id))  properties +default-properties+))
 
 (defun create-translators (&rest translators)
   (map 'list #'(lambda (person) (list :translator person)) translators))
@@ -30,6 +28,9 @@ oldest."
 (load "src/data/essays.lisp")
 
 ;;; Regeneration code
+
+(defun make-environment ()
+  (append (list :conf *configuration*) (list :essays *essays*)))
 
 (defun template-to-generate-file-from-p (path)
   "Returns t if given file should generate a corresponding HTML in source."
