@@ -42,7 +42,7 @@
    	file affected : 
    	
 *** DONE essay-list-entry.html
-*** TODO essay-datailed-entry.html
+*** DONE essay-datailed-entry.html
 
 *** DONE remove @var with content to render partial mechanizm
    	File affected

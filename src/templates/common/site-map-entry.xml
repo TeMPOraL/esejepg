@@ -1,0 +1,5 @@
+<url>
+  <loc><% @var sitemap-url %></loc> (make-sitemap-url name))
+  <lastmod><% @var date %></lastmod>~%" (get-current-date-w3c))
+  <changefreq>monthly</changefreq>
+</url>
