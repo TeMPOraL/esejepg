@@ -11,22 +11,34 @@
 ;;; Regeneration code
 
 (defparameter html-to-regenerate 
-  (list
-   ("templates/index.html" .  "site/index.html")
-   ("templates/o-stronie.html" . "site/o-stronie.html")
-   ("templates/pg.html" . "site/pomoz-z-tlumaczeniem.html")
-   ("templates/pg.html" . "pytania.html")))
+  '((:form #P"src/templates/index.html"
+	 :to #P"site/index.html"
+	 :env (:title "Eseje Paula Grahama w języku polskim"
+		   :description "Eseje Paula Grahama w języku polskim."
+		   :template #P"src/templates/index.html"))
+	(:from "templates/o-serisie.html"
+	 :to "o-serwisie.html"
+	 :env (:title "Informacje o serwisie"
+		   :description "Czym jest serwis esejepg.pl i dlaczego powstał?"))
+	(:from "templates/pg.html"
+	 :to "pomoz-z-tlumaczeniem.html"
+	 :env (:title "Paul Graham"
+		   :description "Kim jest Paul Graham?"))
+	(:from"templates/pytania.html"
+	 :to "pytania.html"
+	 :env (:title "Pytania dotyczące serwisu"
+		   :description "Odpowiedzi na różne pytania dotyczące serwisu esejepg.pl."))))
+
 
 (defparameter css-to-regenerate
-  (list
-   ("cssreset-min.scss" . "cssrest-mini.css")
-   ("essay.scss" . "essay.css")
-   ("main.scss" . "main.css")
-   ("page.scss" . "page.css")))
-
-(defun process-template (pathname)
-  "Run the template engine on selected HTML template, and return the processed code as string."
-  )
+  '((:source "cssreset-min.scss"
+	 :target "cssrest-mini.css")
+	(:source "essay.scss"
+	 :traget "essay.css")
+	(:source "main.scss"
+	 :target "main.css")
+	(:source "page.scss"
+	 :target "page.css")))
 
 (defun save-file (content pathname)
   "Save content to file at `pathname', ensuring that all the required directories exist."
@@ -42,33 +54,21 @@
              (make-destination-path pathname))
   (format t "Regenerated successfuly: ~A (from ~A)~%" (make-destination-path pathname) pathname))
 
-(defun del-dir-or-file-noerror (pathname)
-  "Delete file, don't crash on failure."
-  (format t "Deleting: ~A~%" pathname)
-  (ignore-errors (fad:delete-directory-and-files pathname)))
-
-(defun delete-old-files ()
-  "Delete all generated files."
-  (ignore-errors
-    (fad:walk-directory "site" 'del-dir-or-file-noerror :if-does-not-exist :ignore :directories t)))
-
-
 (define-condition sass-compilation-error (error)
   ((exit-code :initarg :exit-code :reader exit-code)))
 
-(defconstant +css-root-path+ (pathname "site/css"))
-(defconstant +scss-root-path+ (pathname "src/css"))
-
-(defun generate-css (source target)
+(defun generate-css (descriptor)
   "Generate CSS file from SASS files."
-  (let* ((source-path (namestring pathname))
-         (target-path (make-css-file-name name))
-         (command (format nil "`which sass` --style expanded ~A:~A" name css-name)))
+  (defconstant +css-root-path+ "site/css/")
+  (defconstant +scss-root-path+  "src/css/")
+  (let* ((source (concatenate 'string +scss-root-path+ (getf descriptor :source)))
+         (target (concatenate 'string +css-root-path+ (getf descriptor :target)))
+         (command (format nil "`which sass` --style expanded ~A:~A" source target)))
 ;;Use merge-path to get valid pathname
-    (ensure-directories-exist css-name)
+    (ensure-directories-exist target)
     (format t "Running command: ~A~%" command)
-    #+LINUX(unless (= 0 (asdf:run-shell-command command))
-			   (error 'sass-compilation-error))))
+    (unless (= 0 (asdf:run-shell-command command))
+	  (error 'sass-compilation-error))))
 			  
 
 ;; sitemap
@@ -88,7 +88,6 @@
     (and (ppcre:scan "\.html$" name)
 	 (not (ppcre:scan "index\.html$" name)))))
 
-
 ;; Rewrite this function
 (defun generate-sitemap ()
   "Generate sitemap XML file for search engines."
@@ -100,10 +99,17 @@
     (fad:walk-directory "site" (lambda (name) (write-sitemap-entry stream name)) :test 'html-file-p)
     (write-sitemap-postamble stream)))
 
+(cl-emb:register-emb "include-dynamic"
+					 "(let ((cl-emb:*escape-type* cl-emb:*escape-type*))
+                           (cl-emb:execute-emb (merge-pathnames (cl-emb::get-emb :template)  template-path-default) :env env :generator-maker generator-maker)) ")
+
+(defun generate-static-page-template ()
+  "Generate pages from tempaltes"
+
 (defun regenerate ()
   "Regenerate all static HTML from template files in src/ directory, and put them in site/ directory."
   (format t "Deleting old files...~%")
-  (delete-old-files)
+  (fad:delete-directory-and-files "site" :if-does-not-exist :ignore)
 
   (format t "Loading essay data...~%")
   (load "src/data/essays.lisp")
@@ -113,7 +119,7 @@
   (fad:walk-directory "src" 'generate-file :test 'template-to-generate-file-from-p)
 
   (format t "Regenerating CSS files...~%")
-  (fad:walk-directory "src/css" 'generate-css :test 'sass-file-p)
+  (mapcar #'generate-css css-to-regenerate)
 
   (format t "Generating sitemap...~%")
   (generate-sitemap)
