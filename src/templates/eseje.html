@@ -56,7 +56,8 @@
         <h2><a href="http://paulgraham.com/articles.html">Eseje Paula Grahama</a> przetłumaczone na język polski.</h2>
       </div>
       <div id="content">
-        <% @include (@var template) %>
+		<% @include common/essay-detailed-entry.html %>
+        <% @call include-dynamic %>
       </div>
 
       <div id="social">
@@ -65,7 +66,7 @@
           // wykopywarka wersja kompaktowa (70x20)
           var wykop_url=location.href;	// Link do strony
           var wykop_title=encodeURIComponent(document.title);	// Tytuł strony (pobierany z <title>)
-            var wykop_desc=encodeURIComponent('<%= description %>');
+            var wykop_desc=encodeURIComponent('<% @var description %>');
             var widget_bg='FFFFFF';
             var widget_type='compact';
             var widget_bold=true;	// pogrubienie napisu Wykop - domyślnie true
