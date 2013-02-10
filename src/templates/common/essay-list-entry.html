@@ -3,7 +3,7 @@
   <% @if disabled %>
   <h2 class="essay-title disabled"><% @var title %></h2>
   <% @else %>
-  <h2 class="essay-title"><a href="<% @var url %>"><%= title %></a></h2>
+  <h2 class="essay-title"><a href="<% @var url %>"><% @var title %></a></h2>
   <% @endif %>
 
   <span class="essay-original-title">Oryginał: <a href="<% @var orig-url %>"><%= @var orig-title %></a>
