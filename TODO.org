@@ -6,8 +6,9 @@
   Define ASDF systems for data and generation system.
   It will protect form const redefinition.
 
-* TODO Fix template generation
-** TODO Update generation function to new layout of sites
+* DONE Fix site-map generation
+** DONE Fix template generation
+** DONE Update generation function to new layout of sites
 ** DONE Remove function definition at template
    Form
 *** DONE standard-essay.html

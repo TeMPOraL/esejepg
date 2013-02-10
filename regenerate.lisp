@@ -7,6 +7,9 @@
 ;;; Stuff required for EMB templates.
 (defconstant +sitemap-name+ "site/sitemap.xml" "Sitemap name (with location).")
 (defconstant +root-url+ "http://esejepg.pl/" "Root URL of the web page.")
+(defconstant +css-root-path+ "site/css/")
+(defconstant +scss-root-path+  "src/css/")
+
 
 (format t "Loading essay data...~%")
 (load "src/data/essays.lisp")
@@ -16,23 +19,23 @@
 
 (defparameter html-to-regenerate 
   `((:layout #P"src/templates/strony.html"
-		   :to #P"site/index.html"
+		   :to "index.html"
 		   :env (:title "Eseje Paula Grahama w języku polskim"
 						:description "Eseje Paula Grahama w języku polskim."
 						:essays ,*essays*
 						:template "src/templates/index.html"))
 	(:layout #P"src/templates/strony.html"
-		   :to #P"site/o-serwisie.html"
+		   :to "o-serwisie.html"
 		   :env (:title "Informacje o serwisie"
 						:description "Czym jest serwis esejepg.pl i dlaczego powstał?"
 						:template "src/templates/o-serwisie.html"))
 	(:layout #P"src/templates/strony.html"
-		   :to #P"site/pg.html"
+		   :to "pg.html"
 		   :env (:title "Paul Graham"
 						:description "Kim jest Paul Graham?"
 						:template "src/templates/pg.html" ))
 	(:layout #P"src/templates/strony.html"
-		   :to #P"site/pytania.html"
+		   :to "pytania.html"
 		   :env (:title "Pytania dotyczące serwisu"
 						:description "Odpowiedzi na różne pytania dotyczące serwisu esejepg.pl."
 						:template "src/templates/pytania.html"))))
@@ -56,12 +59,10 @@
                           :if-does-not-exist :create)
     (princ content stream)))
 
-(define-condition sass-compilation-error (error))
+(define-condition sass-compilation-error (error) ())
 
 (defun generate-css-file (descriptor)
   "Generate CSS file from SASS files."
-  (defconstant +css-root-path+ "site/css/")
-  (defconstant +scss-root-path+  "src/css/")
   (let* ((source (concatenate 'string +scss-root-path+ (getf descriptor :source)))
          (target (concatenate 'string +css-root-path+ (getf descriptor :target)))
          (command (format nil "`which sass` --style expanded ~A:~A" source target)))
@@ -70,6 +71,10 @@
     (format t "Running command: ~A~%" command)
     (unless (= 0 (asdf:run-shell-command command))  
 	  (error 'sass-compilation-error))))
+
+(defun generate-csss ()
+  (mapcar #'generate-css-file css-to-regenerate))
+
 
 ;; sitemap
 (defun get-current-date-w3c ()
@@ -80,24 +85,28 @@
     (format nil "~A-~2,'0d-~2,'0d" year month day)))
 
 (defun make-sitemap-url (name)
-  (ppcre:regex-replace ".*site/" (namestring name) +root-url+))
+  (concatenate 'string +root-url+ name))
 
+(defun make-site-entry (url)
+  (list :sitemap-url (make-sitemap-url url) :date (get-current-date-w3c)))
 
-(defun html-file-p (path)
-  (let ((name (namestring path)))
-    (and (ppcre:scan "\.html$" name)
-	 (not (ppcre:scan "index\.html$" name)))))
+(defun generate-pages-for-map ()
+  (flet ((location (x) (getf x :to)))
+	(mapcar #'make-site-entry
+			(concatenate 'list
+						 (mapcar #'location html-to-regenerate)
+						 (mapcar #'location *essays*)))))
 
-;; Rewrite this function
 (defun generate-sitemap ()
   "Generate sitemap XML file for search engines."
-  (with-open-file (stream +sitemap-name+
-                          :direction :output
-                          :if-exists :supersede
-                          :if-does-not-exist :create)
-    (write-sitemap-preamble stream)
-    (fad:walk-directory "site" (lambda (name) (write-sitemap-entry stream name)) :test 'html-file-p)
-    (write-sitemap-postamble stream)))
+  (save-file 
+   #P"site/sitemap.xml"
+   (emb:execute-emb #P"src/templates/sitemap.xml"
+					:env 
+					(list :root-url +root-url+
+						  :current-date (get-current-date-w3c)
+						  :pages (generate-pages-for-map)))))
+					
 
 (cl-emb:register-emb "include-dynamic"
 					 "<%= (let ((cl-emb:*escape-type* cl-emb:*escape-type*))
@@ -105,8 +114,10 @@
 
 (defun generate-pages ()
   "Generate general pages pages from tempaltes"
+  (format T "Genarete pages file~%")
   (mapcar #'(lambda (site)
-			  (save-file (getf site :to)
+			  (format T "generate ~A~%" (merge-pathnames (getf site :to) (merge-pathnames "site/")))
+			  (save-file (merge-pathnames (getf site :to) (merge-pathnames "site/"))
 						 (emb:execute-emb 
 						  (getf site :layout)
 						  :env (getf site :env))))
@@ -114,9 +125,10 @@
 
 (defun generate-essays ()
   "Generate essay pages"
-  (format T "Generate essay")
+  (format T "Generate essay~%")
   (mapcar #'(lambda (essay)
-			  (save-file (getf essay :to)
+			  (format T "generate ~A~%" (getf essay :to))
+			  (save-file (merge-pathnames (getf essay :to) (merge-pathnames "site/"))
 						 (emb:execute-emb 
 						  (getf essay :layout)
 						  :env essay)))

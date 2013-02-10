@@ -6,6 +6,6 @@
 	<changefreq>monthly</changefreq>
   </url>
   <% @loop pages %>
-  <% @include common/sitemap-entry.html %>
+  <% @include common/sitemap-entry.xml %>
   <% @endloop %>
 </urlset>

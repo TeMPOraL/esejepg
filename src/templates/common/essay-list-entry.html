@@ -15,7 +15,11 @@
 
   <% @if alt-translations %>
   <span class="alt-translations">Inne tłumaczenia:
-	<%= (format nil "~{~{<a href=\"~A\">~A</a>~}~^, ~}.~%" @var alt-translations) %></span><br />
+	<% @loop alt-translations %>
+	<a href="<% @var url %>"><% @var title %></a>,
+	<% @endloop %>
+  </span>
+  <br />
   <% @endif %>
 
   <% @if part-of-hnp %>

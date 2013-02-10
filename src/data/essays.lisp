@@ -16,7 +16,7 @@ oldest."
 		  properties
 		  (list :template (pathname (concatenate 'string +essays-root+ essay-id ".html"))
 				:layout +default-layout+
-				:to (pathname (concatenate 'string "site/esseje/" (getf essay :id) ".html")))
+				:to (concatenate 'string "eseje/" essay-id ".html"))
 		  +default-properties+))
 
 (defun create-translators (&rest translators)
@@ -128,7 +128,7 @@ oldest."
 		 :orig-title "What You`ll Wish You`d Known"
 		 :orig-url "http://paulgraham.com/hs.html"
 		 :orig-date "Styczeń 2005"
-										;    :alt-translations `(("http://T1" "T1") ("http://T2" "T2") ("http://T3" "T3"))
+	;    :alt-translations `((:url "http://T1" :title "T1") (:url "http://T2" :title "T2")
 		 :translators (create-translators +aajnno+)
 		 :editors (create-editors +temporal+)
 		 :description "Przemówienie dla licealistów na temat tego, co czeka ich w dorosłym życiu i jak już teraz mogą zacząć wykorzystywać swój czas najlepiej.")
