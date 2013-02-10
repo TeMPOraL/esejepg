@@ -3,6 +3,9 @@
 ;; Some default stuff
 (defconstant +default-properties+ '(:title nil :url nil :orig-title nil :orig-url nil :date nil :orig-date nil :alt-translations nil :translators nil :editors nil :disabled nil :additional-html nil :part-of-hnp nil :description ""))
 
+(defconstant +essays-root+ "src/essays/")
+(defconstant +default-layout+ #P"src/templates/eseje.html")
+
 ;;; Data processing code
 ;;; Used for being able to refer to essays declaratively.
 (defun defessay (essay-id &rest properties)
@@ -11,7 +14,9 @@ EMB templates. Please define essays from oldest to newest, to ensure proper orde
 oldest."
   (append (list :id essay-id)
 		  properties
-		  (list :template (concatenate 'string "src/eseje/" essay-id ".html"))
+		  (list :template (pathname (concatenate 'string +essays-root+ essay-id ".html"))
+				:layout +default-layout+
+				:to (pathname (concatenate 'string "site/esseje/" (getf essay :id) ".html")))
 		  +default-properties+))
 
 (defun create-translators (&rest translators)
