@@ -1,18 +1,45 @@
 <div class="essay-detailed-entry">
-  <% (destructuring-bind (&key title url orig-title orig-url date orig-date alt-translations additional-html translators editors disabled part-of-hnp description) (getf (getf env :essays) *current-essay*) (progn %>
-
-  <h1 class="essay-title"><%= title %></h1>
+  <h1 class="essay-title"><% @var title %></h1>
   
-  <span class="essay-original-title">Oryginał: <a href="<%= orig-url %>"><%= orig-title %></a><%(if orig-date (progn %>, <%= orig-date %> <% )) %><br /></span>
-  <% (if translators (progn %><span class="essay-translators">Tłumaczenie:<%= (format nil "~{ ~A~^,~}~%" translators) %><% (if date (progn %> <span class="essay-creation-date"><%= date %></span><% )) %><br /></span><% )) %>
+  <span class="essay-original-title">Oryginał: 
+	<a href="<% @var orig-url %>"><% @var orig-title %></a>
+	<% @if orig-date %>,
+	  <% @var orig-date %>
+	<% @endif %><br />
+  </span>
+  <% @if translators %>
+  <span class="essay-translators">Tłumaczenie:
+	<% @loop translators %>
+	  <% @var translator %>
+	<% @endloop %>
+	
+	<% @if date %>
+	<span class="essay-creation-date">
+	  <% @var date %>
+	</span>
+	<% @endif %>
+	<br />
+  </span>
+  <% @endif %>
 
-  <% (if editors (progn %><span class="essay-editors">Korekta: <%= (format nil "~{~A~^, ~}~%" editors) %><br /></span><% )) %>
+  <% @if editors %>
+  <span class="essay-editors">Korekta:
+	<% @loop editors %>
+	  <% @var editor %>
+	<% @endloop %>
+	<br />
+  </span>
+  <% @endif %>
 
-  <% (if alt-translations (progn %>Inne tłumaczenia:
-  <span class="alt-translations"><%= (format nil "~{~{<a href=\"~A\">~A</a>~}~^, ~}.~%" alt-translations) %></span><br />
-  <% )) %> <%# progn, if #%>
+  <% @if alt-translations %>Inne tłumaczenia:
+  <span class="alt-translations">
+	<% @loop alt-translations %>
+	<a href="<% @var url %>" ><% @var text %></a>
+	<% @endloop %>
+  </span><br />
+  <% @endif %>
 
-  <% (if part-of-hnp %><span class="part-of-hnp">Ten esej jest częścią książki <a href="http://helion.pl/ksiazki/hakerzy-i-malarze-wielkie-idee-ery-komputerow-paul-graham,hakmal.htm">"Hakerzy i malarze"</a> (<a href="http://paulgraham.com/hackpaint.html">oryginał angielski</a>).</span><br /><% ) %> <%# endif #%>
+  <% @if part-of-hnp %><span class="part-of-hnp">Ten esej jest częścią książki <a href="http://helion.pl/ksiazki/hakerzy-i-malarze-wielkie-idee-ery-komputerow-paul-graham,hakmal.htm">"Hakerzy i malarze"</a> (<a href="http://paulgraham.com/hackpaint.html">oryginał angielski</a>).</span><br />
+  <% @endif %>
 
-<% )) %>  <%# progn, destructuring-bind #%>
 </div>

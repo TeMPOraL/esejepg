@@ -1,24 +1,37 @@
 <div class="essay-list-entry">
-  <% (destructuring-bind (&key title url orig-title orig-url date orig-date alt-translations additional-html translators editors disabled part-of-hnp description) (getf (getf env :essays) *current-essay*) (progn %>
 
-  <% (if disabled (progn %><h2 class="essay-title disabled"><%= title %></h2>
-  <%) (progn %><h2 class="essay-title"><a href="<%= url %>"><%= title %></a></h2><% )) %> <%# progn, if #%>
+  <% @if disabled %>
+  <h2 class="essay-title disabled"><% @var title %></h2>
+  <% @else %>
+  <h2 class="essay-title"><a href="<% @var url %>"><% @var title %></a></h2>
+  <% @endif %>
 
-  <span class="essay-original-title">Oryginał: <a href="<%= orig-url %>"><%= orig-title %></a><%(if orig-date (progn %>, <%= orig-date %> <% )) %><br /></span>
+  <span class="essay-original-title">Oryginał: <a href="<% @var orig-url %>"><%= @var orig-title %></a>
+	<% @if orig-date %>
+	<%= @var orig-date %> 
+	<% @endif %>
+	<br />
+  </span>
 
-  <% (if alt-translations (progn %>
-  <span class="alt-translations">Inne tłumaczenia: <%= (format nil "~{~{<a href=\"~A\">~A</a>~}~^, ~}.~%" alt-translations) %></span><br />
-  <% )) %> <%# progn, if #%>
+  <% @if alt-translations %>
+  <span class="alt-translations">Inne tłumaczenia:
+	<% @loop alt-translations %>
+	<a href="<% @var url %>"><% @var title %></a>,
+	<% @endloop %>
+  </span>
+  <br />
+  <% @endif %>
 
-  <% (if part-of-hnp %><span class="part-of-hnp">Ten esej jest częścią książki <a href="http://helion.pl/ksiazki/hakerzy-i-malarze-wielkie-idee-ery-komputerow-paul-graham,hakmal.htm">"Hakerzy i malarze"</a> (<a href="http://paulgraham.com/hackpaint.html">oryginał angielski</a>).</span><br /><% ) %> <%# endif #%>
+  <% @if part-of-hnp %>
+  <span class="part-of-hnp">Ten esej jest częścią książki <a href="http://helion.pl/ksiazki/hakerzy-i-malarze-wielkie-idee-ery-komputerow-paul-graham,hakmal.htm">"Hakerzy i malarze"</a> (<a href="http://paulgraham.com/hackpaint.html">oryginał angielski</a>).</span><br />
+  <% @endif %>
+n
+  <% @if description %>
+  <span class="description"><%= @var description %></span><br />
+  <% @endif %>
 
-  <% (if description (progn %>
-  <span class="description"><%= description %></span><br />
-  <% )) %> <%# progn, if #%>
+  <% @if additional-html  %>
+  <span class="additional-html"><%= @var additional-html %></span><br />
+  <% @endif %>
 
-  <% (if additional-html (progn %>
-  <span class="additional-html"><%= additional-html %></span><br />
-  <% )) %> <%# progn, if #%>
-
-<% )) %>  <%# progn, destructuring-bind #%>
 </div>

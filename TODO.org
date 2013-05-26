@@ -2,6 +2,55 @@
 #+startup: hidestars
 
 
+* TODO Move from load to require
+  Define ASDF systems for data and generation system.
+  It will protect form const redefinition.
+
+* DONE Fix site-map generation
+** DONE Fix template generation
+** DONE Update generation function to new layout of sites
+** DONE Remove function definition at template
+   Form
+*** DONE standard-essay.html
+	vairable use in function (need to me transform into template
+	  + title
+	  + orig-title
+	  + orig-date
+	  + translators
+	  + date
+	  + editors
+	  + alt-translations
+	  + part-of-hpn
+
+*** DONE standard-essay-item.html
+	variable use in function (need to move as template)
+	+ disabled
+	+ title
+	+ url
+	+ orig-title
+	+ orig-url
+	+ date
+	+ orig-date
+	+ alt-translations
+	+ additional-html
+	+ translators
+	+ editors
+	+ disabled
+	+ part-of-hnp
+	+ description
+
+*** DONE Remove *current-essay* description form template in advice to essay item (form env)
+   	file affected : 
+   	
+*** DONE essay-list-entry.html
+*** DONE essay-datailed-entry.html
+
+*** DONE remove @var with content to render partial mechanizm
+   	File affected
+   	+ eseje.html
+   	+ strony.htmm
+
+
 * TODO Make the pull-and-regenerate process triggerable from the web.
   Just so that I won't have to connect to the server every time I want to edit a translation.
 
