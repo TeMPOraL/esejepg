@@ -8,7 +8,7 @@
 
 ;;; Data processing code
 ;;; Used for being able to refer to essays declaratively.
-(defun defessay (essay-id &rest properties)
+(defun make-essay (essay-id &rest properties)
   "Defines an essay by putting it's data into global *environment* variable, which will be an environment for
 EMB templates. Please define essays from oldest to newest, to ensure proper order when iterating (from newest to
 oldest."
@@ -32,7 +32,7 @@ oldest."
 
 ;;; essays
 	(list 
-	 (defessay "progbot"
+	 (make-essay "progbot"
 		 :title "Programowanie metodą wstępującą (ang. bottom-up)"
 		 :url "/eseje/progbot.html"
 		 :orig-title "Programming Bottom-Up"
@@ -67,7 +67,7 @@ oldest."
 
 	 ;; Taste for Makers
 
-	 (defessay "fix"
+	 (make-essay "fix"
 		 :title "Co rozwiązują języki"
 		 :url "/eseje/fix.html"
 		 :orig-title "What Languages Fix"
@@ -121,7 +121,7 @@ oldest."
 
 	 ;; Made in USA
 
-	 (defessay "hs"
+	 (make-essay "hs"
 		 :title "Co będziecie chcieli, żeby ktoś był powiedział Wam wcześniej"
 		 :url "/eseje/hs.html"
 		 :date "Styczeń 2013"
@@ -139,7 +139,7 @@ oldest."
 
 	 ;; Undergraduation
 
-	 (defessay "writing44"
+	 (make-essay "writing44"
 		 :title "O pisaniu, zwięźle"
 		 :url "/eseje/writing44.html"
 		 :date "Grudzień 2012"
@@ -173,7 +173,7 @@ oldest."
 
 	 ;; Web 2.0
 
-	 (defessay "procrastination"
+	 (make-essay "procrastination"
 		 :title "Dobra i zła prokrastynacja"
 		 :url "/eseje/procrastination.html"
 		 :date "Styczeń 2013"
@@ -222,7 +222,7 @@ oldest."
 
 	 ;; Microsoft is Dead
 
-	 (defessay "judgement"
+	 (make-essay "judgement"
 		 :title "Dwa rodzaje osądów"
 		 :url "/eseje/judgement.html"
 		 :date "Styczeń 2013"
@@ -310,7 +310,7 @@ oldest."
 	 ;; A Local Revolution?
 
 	 ;; Maker`s Schedule, Manager`s Schedule 
-	 (defessay "makersschedule"
+	 (make-essay "makersschedule"
 		 :title "Harmonogram twórcy, harmonogram menadżera"
 		 :url "/eseje/makersschedule.html"
 		 :date "Styczeń 2013"
@@ -381,7 +381,7 @@ oldest."
 
 	 ;; Writing and Speaking
 
-	 (defessay "todo"
+	 (make-essay "todo"
 		 :title "Szczyt mojej listy rzeczy do zrobienia"
 		 :url "/eseje/todo.html"
 		 :date "Styczeń 2013"
@@ -396,7 +396,7 @@ oldest."
 
 	 ;; Startup = Growth
 
-	 (defessay "hw"
+	 (make-essay "hw"
 		 :title "Renesans Sprzętu"
 		 :url "/eseje/hw.html"
 		 :date "Styczeń 2013"
