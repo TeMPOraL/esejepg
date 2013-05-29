@@ -17,29 +17,31 @@
 
 ;;; Regeneration come
 
+(defvar site-template #P"src/templates/layouts/site.html")
+
 (defparameter html-to-regenerate 
-  `((:layout #P"src/templates/strony.html"
+  `((:layout ,site-template
 		   :to "index.html"
 		   :env (:title "Eseje Paula Grahama w języku polskim"
 						:description "Eseje Paula Grahama w języku polskim."
 						:essays ,*essays*
 						:template "src/templates/index.html"))
-	(:layout #P"src/templates/strony.html"
+	(:layout ,site-template
 		   :to "o-serwisie.html"
 		   :env (:title "Informacje o serwisie"
 						:description "Czym jest serwis esejepg.pl i dlaczego powstał?"
 						:template "src/templates/o-serwisie.html"))
-	(:layout #P"src/templates/strony.html"
+	(:layout ,site-template
 		   :to "pg.html"
 		   :env (:title "Paul Graham"
 						:description "Kim jest Paul Graham?"
 						:template "src/templates/pg.html" ))
-	(:layout #P"src/templates/strony.html"
+	(:layout ,site-template
 		   :to "pytania.html"
 		   :env (:title "Pytania dotyczące serwisu"
 						:description "Odpowiedzi na różne pytania dotyczące serwisu esejepg.pl."
 						:template "src/templates/pytania.html"))
-	(:layout #P"src/templates/strony.html"
+	(:layout ,site-template
 		   :to "pomoz-z-tlumaczeniem.html"
 		   :env (:title "Paul Graham"
 						:description "Kim jest Paul Graham?"
