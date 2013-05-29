@@ -38,12 +38,16 @@
 		   :to "pytania.html"
 		   :env (:title "Pytania dotyczące serwisu"
 						:description "Odpowiedzi na różne pytania dotyczące serwisu esejepg.pl."
-						:template "src/templates/pytania.html"))))
-
+						:template "src/templates/pytania.html"))
+	(:layout #P"src/templates/strony.html"
+		   :to "pomoz-z-tlumaczeniem.html"
+		   :env (:title "Paul Graham"
+						:description "Kim jest Paul Graham?"
+						:template "src/templates/pomoz-z-tlumaczeniem.html" ))))
 
 (defparameter css-to-regenerate
   '((:source "cssreset-min.scss"
-	 :target "cssrest-mini.css")
+	 :target "cssreset-min.css")
 	(:source "essay.scss"
 	 :target "essay.css")
 	(:source "main.scss"
