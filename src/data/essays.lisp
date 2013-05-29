@@ -4,7 +4,7 @@
 (defconstant +default-properties+ '(:title nil :url nil :orig-title nil :orig-url nil :date nil :orig-date nil :alt-translations nil :translators nil :editors nil :disabled nil :additional-html nil :part-of-hnp nil :description ""))
 
 (defconstant +essays-root+ "src/essays/")
-(defconstant +default-layout+ #P"src/templates/eseje.html")
+(defconstant +default-layout+ #P"src/templates/layouts/essay.html")
 
 ;;; Data processing code
 ;;; Used for being able to refer to essays declaratively.
