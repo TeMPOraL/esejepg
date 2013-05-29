@@ -1,10 +1,2 @@
-site/eseje/*.html
-site/strony/*.html
-site/css/*.css
-
-site\\eseje\\*.html
-site\\strony\\*.html
-site\\css\\*.css
-
-workspace/*
-workspace\\*
+site
+.*

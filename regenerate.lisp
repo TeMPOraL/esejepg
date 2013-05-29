@@ -17,33 +17,39 @@
 
 ;;; Regeneration come
 
+(defvar site-template #P"src/templates/layouts/site.html")
+
 (defparameter html-to-regenerate 
-  `((:layout #P"src/templates/strony.html"
+  `((:layout ,site-template
 		   :to "index.html"
 		   :env (:title "Eseje Paula Grahama w języku polskim"
 						:description "Eseje Paula Grahama w języku polskim."
 						:essays ,*essays*
 						:template "src/templates/index.html"))
-	(:layout #P"src/templates/strony.html"
+	(:layout ,site-template
 		   :to "o-serwisie.html"
 		   :env (:title "Informacje o serwisie"
 						:description "Czym jest serwis esejepg.pl i dlaczego powstał?"
 						:template "src/templates/o-serwisie.html"))
-	(:layout #P"src/templates/strony.html"
+	(:layout ,site-template
 		   :to "pg.html"
 		   :env (:title "Paul Graham"
 						:description "Kim jest Paul Graham?"
 						:template "src/templates/pg.html" ))
-	(:layout #P"src/templates/strony.html"
+	(:layout ,site-template
 		   :to "pytania.html"
 		   :env (:title "Pytania dotyczące serwisu"
 						:description "Odpowiedzi na różne pytania dotyczące serwisu esejepg.pl."
-						:template "src/templates/pytania.html"))))
-
+						:template "src/templates/pytania.html"))
+	(:layout ,site-template
+		   :to "pomoz-z-tlumaczeniem.html"
+		   :env (:title "Paul Graham"
+						:description "Kim jest Paul Graham?"
+						:template "src/templates/pomoz-z-tlumaczeniem.html" ))))
 
 (defparameter css-to-regenerate
   '((:source "cssreset-min.scss"
-	 :target "cssrest-mini.css")
+	 :target "cssreset-min.css")
 	(:source "essay.scss"
 	 :target "essay.css")
 	(:source "main.scss"
@@ -139,6 +145,7 @@
   (let* ((relative-name (enough-namestring source (merge-pathnames "src/assets/")))
 		 (target (merge-pathnames relative-name (merge-pathnames "site/"))))
 	(ensure-directories-exist target)
+	(format T "copy ~A to ~A~%" source target)
 	(fad:copy-file source target :overwrite t)))
 
 (defun copy-assets ()
@@ -154,6 +161,7 @@
   (generate-essays)
   (format t "Regenerating CSS files...~%")
   (generate-csss)
+  (copy-assets)
 
   (format t "Generating sitemap...~%")
   ;(generate-sitemap)
