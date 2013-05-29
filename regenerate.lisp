@@ -139,6 +139,7 @@
   (let* ((relative-name (enough-namestring source (merge-pathnames "src/assets/")))
 		 (target (merge-pathnames relative-name (merge-pathnames "site/"))))
 	(ensure-directories-exist target)
+	(format T "copy ~A to ~A~%" source target)
 	(fad:copy-file source target :overwrite t)))
 
 (defun copy-assets ()
@@ -154,6 +155,7 @@
   (generate-essays)
   (format t "Regenerating CSS files...~%")
   (generate-csss)
+  (copy-assets)
 
   (format t "Generating sitemap...~%")
   ;(generate-sitemap)
