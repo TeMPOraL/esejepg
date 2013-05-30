@@ -1,0 +1,1 @@
+sbcl --load  "regenerate.lisp" --eval "(progn (regenerate) (quit))" --no-interactive
